@@ -116,7 +116,7 @@ $("#submit").click(function (event) {
 
 function DynamicInputWidthChange() {
 	$('.finalresult input').each(function () {
-		$(this).width($(this).val().length * 48);
+		$(this).width($(this).val().length > 0 ? $(this).val().length * 48 : 48);
 	});
 }
 // (qty * avg + buyqty * buyprice) / (qty + buyqty) = sellprice /(1 + percent/100)
