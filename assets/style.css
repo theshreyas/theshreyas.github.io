@@ -135,7 +135,7 @@ li.active {
 img:hover {
 	filter: grayscale(100)
 }
-.firsttime{
+.footertext{
   margin-top: 37px;
   color: grey;
   /* display: none; */

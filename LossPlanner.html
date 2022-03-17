@@ -6,7 +6,17 @@
       <meta name="robots" content="noindex, noarchive">
       <meta name="format-detection" content="telephone=no">
       <meta charset="UTF-8">
-      <title>PayTM Loss Planner</title>
+      <title>Loss Planner</title>
+      <meta name="description" content="Albino Tonnina - web engineer. Personal website." />
+      <meta name="author" content="theshreyas">
+      <meta http-equiv="cache-control" content="cache">
+      <meta http-equiv="revisit-after" content="7 days"> 
+      <meta property="og:title" content="PayTM Loss Planner" />
+      <meta property="og:url" content="https://theshreyas.github.io/LossPlanner.html" />
+      <meta property="og:image" content="assets/ogimage.jpg" />
+      <meta property="og:site_name" content="PayTM Loss Planner" />
+      <meta property="og:description" content="Plan your losses diligently." />
+      <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
       <!-- <link rel="stylesheet" href="assets/font-awesome-6-min.css"> -->
       <link rel="stylesheet" href="assets/style.css">
@@ -14,7 +24,7 @@
    <body>
       <header>
          <div style="font-weight: normal; font-style: normal;">
-            <p style="font-size: 48px;letter-spacing: -2px;color: #28BAF2;"><span style="color: #0E4A8A;">Pay</span>TM <span style="color: crimson;">Lo</span>ss 
+            <p style="font-size: 48px;letter-spacing: -2px;color: #28BAF2;"><span style="color: crimson;">Lo</span>ss 
                <span style="color: #0E4A8A;">Pla</span>nner
             </p>
          </div>
@@ -27,11 +37,11 @@
             <input type="text" id="avg" placeholder="Average Price" />
             <button id="submit" class="btn btn-primary" type="submit">Calculate Loss</button>
             <a class="link first" href="#"> Not Invested Yet? </a>
-            <div id="demo-modal" class="modal" style="display: none;">
+            <div id="welldone" class="modal" style="display: none;">
                <span class="close">×</span>
                <img class="modal-content" id="modal-img" src="assets/welldone.gif" alt="Well Done">
                <!-- <div id="caption">Well Done !</div> -->
-             </div>
+            </div>
          </div>
          <center class="goback"><i class="fa-solid fa-caret-left"></i> Go Back</center>
          <div class="result" style="display: flex;justify-content: center;margin-top: 10px;">
@@ -72,12 +82,18 @@
             <input value="" id="netg" type="number" step="1">
             %
          </h2>
-         <div class="firsttime first">Try changing the values.</div>
+         <div class="footertext selltype active">
+            <i class="fa-solid fa-suitcase buyqty"> 12 </i> * <i class="fas fa-indian-rupee-sign buyprice"> 69 </i> = <i class="fas fa-indian-rupee-sign addtotal"> 43000</i><br>
+            <p style="font-size:17px;margin-top:6px;">Total Invested : <i class="fas fa-indian-rupee-sign totalinvested">156700</i>
+               Profit : <i class="fas fa-indian-rupee-sign profit">156700</i>
+            </p>
+         </div>
+         <div class="footertext selltype">Profit : <i class="fas fa-indian-rupee-sign sell-profit">1560</i></div>
+         <div class="footertext first">Try changing the values.</div>
          <!-- <div class="tags">Let's learn these terms <span>Stop Loss</span> <span>Technical Analysis</span> </div> -->
       </div>
       <script src="assets/jquery.min.js"></script>
       <script src="assets/jquery-ui.min.js"></script>
       <script  src="assets/script.js"></script>
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftheshreyas.github.io%2FLossPlanner.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" style="display: none;"/>
    </body>
 </html>
