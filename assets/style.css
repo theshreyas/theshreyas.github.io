@@ -617,6 +617,9 @@ span.net {
 @media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
-	margin-top: 30%;
+		margin-top: 30%;
   }
+}
+.tradingview-widget-copyright {
+	display: none;
 }
