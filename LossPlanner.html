@@ -8,14 +8,14 @@
       <meta charset="UTF-8"/>
       <title>Loss Planner</title>
       <meta name="description" content="Share Market Loss Planner - Plan your losses diligently." />
-      <meta name="keywords" content="Loss Planner, Stock Market Loss Calculator, LossPlanner, Indian Share Market Calculator, Profit Calculator"/>
+      <meta name="keywords" content="Loss Planner, Stock Market Loss Calculator, Average Calculator, Indian Share Market Calculator, Profit Calculator"/>
       <meta name="author" content="theshreyas"/>
       <meta http-equiv="cache-control" content="cache"/>
       <meta http-equiv="revisit-after" content="7 days"/> 
-      <meta property="og:title" content="PayTM Loss Planner" />
+      <meta property="og:title" content="Loss Planner" />
       <meta property="og:url" content="https://theshreyas.github.io/LossPlanner.html" />
       <meta property="og:image" content="assets/ogimage.jpg" />
-      <meta property="og:site_name" content="PayTM Loss Planner" />
+      <meta property="og:site_name" content="Loss Planner" />
       <meta property="og:description" content="Plan your losses diligently." />
       <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png"/>
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'/>
@@ -80,15 +80,49 @@
       </header>
       <div class="main">
          <div class="inputForm" >
-            <input type="text" id="cmp" placeholder="Current Market Price" />
-            <input type="text" id="qty" placeholder="Buy Quantity" />
-            <input type="text" id="avg" placeholder="Average Price" />
-            <button id="submit" class="btn btn-primary" type="submit">Calculate Loss</button>
-            <a class="link first" href="#"> Not Invested Yet? </a>
+            <div class="lossCalculator form">
+               <div class="clear">
+                  <button>Clear</button>
+               </div>
+               <input type="text" id="cmp" placeholder="Current Market Price" />
+               <input type="text" id="qty" placeholder="Buy Quantity" />
+               <input type="text" id="avg" placeholder="Average Price" />
+               <button id="lossCalculatorSubmit" class="btn btn-primary" type="submit">Calculate Loss</button>
+            </div>
+            <div class="percentageCalculator form">
+               <div class="clear">
+                  <button>Clear</button>
+               </div>
+               <input type="number" id="percent_base" placeholder="Base Price" />
+               <input type="number" id="percent_final" placeholder="Final Price" />
+               <input type="number" id="percent" placeholder="Percentage" />
+            </div>
+            <div class="averageCalculator form">
+               <div class="clear">
+                  <button>Reset All</button>
+               </div>
+               <div id="averageFields">
+                  <div class="averageField">
+                     <input type="number" class="avg_buy_price" placeholder="Buy Price 1" style="width:50%;" />
+                     <input type="number" class="avg_qty" placeholder="Stock Quantity 1" style="width:49%;" />
+                  </div>
+                  <div class="averageField">
+                     <input type="number" class="avg_buy_price" placeholder="Buy Price 2" style="width:50%;" />
+                     <input type="number" class="avg_qty" placeholder="Stock Quantity 2" style="width:49%;" />
+                  </div>
+               </div>
+               <div class="addmore"><i class="fa-solid fa-plus"></i> <span> Add</span></div>
+               <button id="averageCalculatorSubmit" class="btn btn-primary">Calculate Average</button>
+            </div>
+            <!-- <a class="link first" href="#"> Not Invested Yet? </a> 
             <div id="welldone" class="modal" style="display: none;">
                <span class="close">×</span>
                <img class="modal-content" id="modal-img" src="assets/welldone.gif" alt="Well Done">
-               <!-- <div id="caption">Well Done !</div> -->
+            </div> -->
+            <div class="otherbuttons">
+                  <button id="percentageCalculator" class="btn2">Percentage Calculator</button>
+                  <button id="averageCalculator" class="btn2">Average Calculator</button>
+                  <button id="lossCalculator" class="btn2">Loss Calculator</button>
             </div>
          </div>
          <center class="goback"><i class="fa-solid fa-caret-left"></i> Go Back</center>
@@ -140,12 +174,16 @@
          <div class="footertext first">Try changing the values.</div>
          <!-- <div class="tags">Let's learn these terms <span>Stop Loss</span> <span>Technical Analysis</span> </div> -->
       </div>
-      <img  src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftheshreyas.github.io%2FLossPlanner.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" style="/* display: none; */margin: auto;display: flex;"/>
+      <div style="text-align:center;margin-top: 50px;">
+         <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftheshreyas.github.io%2FLossPlanner.html&count_bg=%2328BAF2&title_bg=%230E4A8A&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+         <a href="https://api.whatsapp.com/send?text=Check%20this%20Cool%20Share%20Market%20Loss%20Calculator%20%3A%20%20https://theshreyas.github.io/LossPlanner.html" class="whatsapp-share">
+            <i class="fa-brands fa-whatsapp"></i> <p style="color:white;display: inline;">Share</p>
+         </a>
+      </div>
+      <!-- &count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false -->
       <script src="assets/jquery.min.js"></script>
       <script src="assets/jquery-ui.min.js"></script>
       <script  src="assets/script.js"></script>
 
    </body>
 </html>
-<!-- github pages : -->
-<!-- https://in.tradingview.com/widget/ticker-tape/ -->
