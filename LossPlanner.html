@@ -111,6 +111,11 @@
                      <input type="number" class="avg_qty" placeholder="Stock Quantity 2" style="width:49%;" />
                   </div>
                </div>
+               <a id="StockPriceDisplay">Add Current Stock Price</a>
+               <div style="display:none;" id="CurrentStockPrice">
+                  <input type="number" id="currentPrice" placeholder="Current Price" style="width: 70%;">
+                  <div id="closecurrentprice">[<i class="fa-solid fa-xmark"></i>]</div>
+               </div>
                <div class="addmore"><i class="fa-solid fa-plus"></i> <span> Add</span></div>
                <button id="averageCalculatorSubmit" class="btn btn-primary">Calculate Average</button>
             </div>
@@ -119,15 +124,10 @@
                <span class="close">×</span>
                <img class="modal-content" id="modal-img" src="assets/welldone.gif" alt="Well Done">
             </div> -->
-            <div class="otherbuttons">
-                  <button id="percentageCalculator" class="btn2">Percentage Calculator</button>
-                  <button id="averageCalculator" class="btn2">Average Calculator</button>
-                  <button id="lossCalculator" class="btn2">Loss Calculator</button>
-            </div>
          </div>
          <center class="goback"><i class="fa-solid fa-caret-left"></i> Go Back</center>
-         <div class="result" style="display: flex;justify-content: center;margin-top: 10px;">
-            <div class="col-xl-3 col-lg-6">
+         <div class="result" style="justify-content: center;margin-top: 10px;">
+            <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
                <div class="card l-bg-orange-dark">
                   <div class="card-statistic-3 p-4">
                      <div class="card-icon card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
@@ -149,10 +149,61 @@
                </div>
             </div>
          </div>
+         <div class="averageResult" style="justify-content: center;margin-top: 10px;">
+            <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
+               <div class="card l-bg-orange-dark">
+                  <div class="card-statistic-3 p-4">
+                     <div class="card-icon card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
+                     <div class="card-icon2 card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
+                     <div class="mb-4">
+                        <h5 class="card-title mb-0">Net Profit : <span id="cp">₹0</span> <span id="percentchange">0 % <i class="fa fa-arrow-down"></i></span></h5>
+                     </div>
+                     <div class="row align-items-center mb-2">
+                        <div class="div-investment col-8">
+                           <div class="div-total-invested">Total Invested : <span id="invested">₹0</span></div>
+                           <div class="div-current-value">Total Stocks : <span id="curvalue">0</span></div>
+                        </div>
+                        <div class="div-netloss col-4 text-right"> <span id="netstat" style="">Average Price : <span class="net">₹6,000</span></span></div>
+                     </div>
+                     <div class="progress mt-1" data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+<!--          <div class="averageResult" style="justify-content: center;margin-top: 10px;">
+            <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
+               <div class="card l-bg-orange-dark">
+                  <div class="card-statistic-3 p-4">
+                     <div class="card-icon card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
+                     <div class="card-icon2 card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
+                     <div class="mb-4">
+                        <h5 class="card-title mb-0">Current Price : <span id="cp">₹0</span> <span id="percentchange">0 % <i class="fa fa-arrow-down"></i></span></h5>
+                     </div>
+                     <div class="row align-items-center mb-2">
+                        <div class="div-investment col-8">
+                           <div class="div-total-invested">Total Invested : <span id="invested">₹0</span></div>
+                           <div class="div-current-value">Current Value : <span id="curvalue">₹0</span></div>
+                        </div>
+                        <div class="div-netloss col-4 text-right"> <span id="netstat" style="color: #b70c0c;">Net Loss : <span class="net">₹6,000</span></span></div>
+                     </div>
+                     <div class="progress mt-1" data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div> -->
+         <div class="otherbuttons">
+            <button id="percentageCalculator" class="btn2">Percentage Calculator</button>
+            <button id="averageCalculator" class="btn2">Average Calculator</button>
+            <button id="lossCalculator" class="btn2">Loss Calculator</button>
+        </div>
       </div>
       <div class="nav">
          <ul>
-            <li class="active"><i class="fa fa-cart-arrow-down"></i><span>Average Down</span></li>
+            <li class="active"><i class="fa fa-cart-arrow-down"></i><span style="text-align: center;">Average Down</span></li>
             <li><i class="fa fa-hand-holding-dollar"></i><span>Sell</span></li>
          </ul>
       </div>
@@ -187,3 +238,7 @@
 
    </body>
 </html>
+<!-- github pages : -->
+<!-- https://in.tradingview.com/widget/ticker-tape/ -->
+<!-- https://www.stockaveragecalculator.com/ -->
+<!-- https://www.omnicalculator.com/finance/stock-average -->

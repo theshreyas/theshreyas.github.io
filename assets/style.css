@@ -155,8 +155,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     outline: none !important;
     /* font-family: 'FontAwesome'; */
 }
-.result, .nav {
-    display: none !important;
+.result, .averageResult, .nav {
+    display: none;
 }
 .result input {
     background-color: transparent;
@@ -238,6 +238,9 @@ h5 {
     }
 }
 @media (min-width:1200px) {
+    .averageResult .div-current-value {
+        margin-right: 30px;
+    }
     .col-xl-3 {
         -ms-flex: 0 0 44%;
         flex: 0 0 44%;
@@ -404,6 +407,9 @@ span.net {
     min-height: 100%;
     padding: 2em;
 }
+.averageResult .div-total-invested, .averageResult .div-current-value {
+    font-size: 21px;
+}
 .div-total-invested {
     -ms-flex-align: center!important;
     align-items: center!important;
@@ -413,6 +419,7 @@ span.net {
 }
 .div-current-value {
     text-align: right;
+    font-size: 19px;
 }
 #cp {
     font-size: 36px;
@@ -422,9 +429,6 @@ span.net {
     font-size: 31px;
     color: #b70c0c;
     font-family: 'Font Awesome 6 Free';
-}
-.div-current-value {
-    font-size: 19px;
 }
 .finalresult {
     padding: 15px;
@@ -567,6 +571,8 @@ span.net {
 }
 .otherbuttons {
     margin-top: 40px;
+    margin: 0 auto;
+    max-width: 850px;
 }
 /*#percentageCalculator {
     float: left;
@@ -625,6 +631,17 @@ span.net {
     cursor: pointer;
     font-weight: bolder;
     background: #0E4A8A;
+}
+#closecurrentprice {
+    cursor: pointer;
+    font-weight: bolder;
+    display: inline;
+    background: #0E4A8A;
+}
+#StockPriceDisplay {
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: right;
 }
 /*.btn2:not([style*="display: none"]):first-child {
 
