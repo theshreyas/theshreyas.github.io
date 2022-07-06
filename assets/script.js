@@ -51,54 +51,55 @@ $('body').on('click', '#lossCalculator', function() {
 $(document).on('input', '#percent_base,#percent_final,#percent', function(e) {
     var id = $(this).attr('id');
     if (id == 'percent_base') {
-        let base = parseInt(e.target.value);
-        let final = parseInt($('#percent_final').val());
-        let percent = parseInt($('#percent').val());
+        let base = parseFloat(e.target.value);
+        let final = parseFloat($('#percent_final').val());
+        let percent = parseFloat($('#percent').val());
         if ($('#percent_final').val() != '' && e.target.value != '') {
-            $('#percent').val(Math.round((final - base) / base * 100));
+            $('#percent').val(((final - base) / base * 100).toFixed(1));
         } else if ($('#percent').val() != '' && e.target.value != '') {
-            $('#percent_final').val(Math.round(base + (base * percent / 100)));
+            $('#percent_final').val((base + (base * percent / 100)).toFixed(1));
         }
     }
     if (id == 'percent_final') {
-        let base = parseInt($('#percent_base').val());
-        let final = parseInt(e.target.value);
-        let percent = parseInt($('#percent').val());
+        let base = parseFloat($('#percent_base').val());
+        let final = parseFloat(e.target.value);
+        let percent = parseFloat($('#percent').val());
         if ($('#percent_base').val() != '' && e.target.value != '') {
-            $('#percent').val(Math.round((final - base) / base * 100));
+            $('#percent').val(((final - base) / base * 100).toFixed(1));
         } else if ($('#percent').val() != '' && e.target.value != '') {
-            $('#percent_base').val(Math.round(final * 100 / (100 + percent)));
+            $('#percent_base').val((final * 100 / (100 + percent)).toFixed(1));
         }
     }
     if (id == 'percent') {
-        let base = parseInt($('#percent_base').val());
-        let final = parseInt($('#percent_final').val());
-        let percent = parseInt(e.target.value);
+        let base = parseFloat($('#percent_base').val());
+        let final = parseFloat($('#percent_final').val());
+        let percent = parseFloat(e.target.value);
         if ($('#percent_base').val() != '' && e.target.value != '') {
-            $('#percent_final').val(Math.round(base + (base * percent / 100)));
+            $('#percent_final').val((base + (base * percent / 100)).toFixed(1));
         } else if ($('#percent_final').val() != '' && e.target.value != '') {
-            $('#percent_base').val(Math.round(final * 100 / (100 + percent)));
+            $('#percent_base').val((final * 100 / (100 + percent)).toFixed(1));
         }
     }
 });
-$('body').on('click', '.addmore', function(event) {
+$('body').on('click', '.addmore', function() {
     var newField = $('#averageFields div.averageField:last').clone();
     var countr = $('.avg_qty').length + 1;
-    newField.find('.avg_buy_price').attr('placeholder', 'Buy Price ' + countr).val('');
-    newField.find('.avg_qty').attr('placeholder', 'Stock Quantity ' + countr).val('');
+    newField.find('.avg_buy_price').attr('placeholder', 'Buy Price ' + countr).val('').css("border-color", "black");
+    newField.find('.avg_qty').attr('placeholder', 'Stock Quantity ' + countr).val('').css("border-color", "black");
     if (!newField.find('.avg_close').length) {
         newField.prepend('<div style="height: 25px;width: 100%;"><div class="avg_close">[<i class="fa-solid fa-xmark"></i>]</div></div>');
     }
     $('#averageFields').append(newField);
 });
-$('body').on('click', '#StockPriceDisplay', function(event) {
+$('body').on('click', '#StockPriceDisplay', function() {
     $(this).hide();
     $('#CurrentStockPrice').show();
+    $('#currentPrice').focus();
 });
-$('body').on('click', '#closecurrentprice', function(event) {
+$('body').on('click', '#closecurrentprice', function() {
     $('#StockPriceDisplay,#CurrentStockPrice').toggle();
 });
-$('body').on('click', '.avg_close', function(event) {
+$('body').on('click', '.avg_close', function() {
     $(this).closest('.averageField').remove();
     var i = 1;
     $('.avg_buy_price').each(function() {
@@ -109,7 +110,7 @@ $('body').on('click', '.avg_close', function(event) {
         $(this).attr('placeholder', 'Stock Quantity ' + j++);
     });
 });
-$('body').on('click', '#averageCalculatorSubmit', function(event) {
+$('body').on('click', '#averageCalculatorSubmit', function() {
     $('.averageCalculator input:visible').each(function() {
         if (!parseInt($(this).val())) {
             $(this).css('border-color', 'red');
@@ -129,7 +130,6 @@ $('body').on('click', '#averageCalculatorSubmit', function(event) {
         totalinvestment += buyprice * buyqty;
         totalqty += parseInt(buyqty);
     }
-    // console.log(totalqty);
     let net = totalinvestment / totalqty;
     if ($('#currentPrice:visible').length) {
         $('.averageResult .progress,.averageResult .mb-4').show();
@@ -137,54 +137,40 @@ $('body').on('click', '#averageCalculatorSubmit', function(event) {
         let profit = 0;
         let profit_per = 0;
         let currentValue = cmp * totalqty;
+        let netgains = totalinvestment - currentValue;
         profit = currentValue - (totalinvestment);
         profit_per = profit / totalinvestment * 100;
-        profit = Math.abs(profit).toLocaleString('en-IN', {
-            maximumFractionDigits: 0,
-            style: 'currency',
-            currency: 'INR'
-        });
-        currentValue = currentValue.toLocaleString('en-IN', {
-            maximumFractionDigits: 0,
-            style: 'currency',
-            currency: 'INR'
-        });
-        if (cmp < net) {
+        profit = FormatAmount(Math.abs(profit), 1);
+        currentValue = FormatAmount(currentValue, 1); 
+        let profitloss = (cmp < net ? ' <p class="bracket" style="color: #9a0000;">(-' : ' <p class="bracket" style="color: #0aff0a;">(+');
+        if (cmp < net) { //loss
             $('.averageResult #percentchange').html(profit_per.toFixed(2) + ' %').css('color', '#b70c0c');
-            // $('.averageResult #netstat').html('Net Loss : <span class="net">' + profit + '</span>').css('color', '#b70c0c');
             $('.averageResult .progress').css('background-color', '#b70c0c');
-            $('.averageResult #cp').css('color', '#b70c0c');
-        } else {
+        } else { //profit
             $('.averageResult #percentchange').html(profit_per.toFixed(2) + ' %').css('color', '#076a07');
-            // $('.averageResult #netstat').html('Net Profit : <span class="net">' + profit + '</span>').css('color', '#076a07');
             $('.averageResult .progress').css('background-color', '#076a07');
-            $('.averageResult #cp').css('color', 'rgb(0 189 0)');
         }
         $('.averageResult .progress-bar').css('width', (100 - Math.abs(profit_per)) + '%');
-        $('.averageResult #cp').html(cmp.toLocaleString('en-IN', {
-            maximumFractionDigits: 1,
-            style: 'currency',
-            currency: 'INR'
-        }));
+        $('.averageResult #cp').html(currentValue + profitloss + FormatAmount(Math.abs(netgains)) + ')</p>');
     } else {
         $('.averageResult .progress,.averageResult .mb-4').hide();
     }
-    net = net.toLocaleString('en-IN', {
-        maximumFractionDigits: 1,
-        style: 'currency',
-        currency: 'INR'
-    });
-    totalinvestment = totalinvestment.toLocaleString('en-IN', {
-        maximumFractionDigits: 1,
-        style: 'currency',
-        currency: 'INR'
-    });
+    net = FormatAmount(net, 1);
+    totalinvestment = FormatAmount(totalinvestment, 1);
     $('.averageResult #invested').html(totalinvestment);
     $('.averageResult #curvalue').html(totalqty);
     $('.averageResult .net').html(net);
     $('.averageResult').show();
 });
-$('body').on('click', '#lossCalculatorSubmit', function(event) {
+
+function FormatAmount(number, maximumFractionDigits = 0) {
+    return number.toLocaleString('en-IN', {
+        maximumFractionDigits: maximumFractionDigits,
+        style: 'currency',
+        currency: 'INR'
+    });
+}
+$('body').on('click', '#lossCalculatorSubmit', function() {
     let cmp = parseInt($('#cmp').val()) || 0;
     let qty = parseInt($('#qty').val()) || 0;
     let avg = parseInt($('#avg').val()) || 0;
@@ -210,16 +196,8 @@ $('body').on('click', '#lossCalculatorSubmit', function(event) {
     let currentValue = cmp * qty;
     profit = currentValue - (totalinvestment);
     profit_per = profit / totalinvestment * 100;
-    profit = Math.abs(profit).toLocaleString('en-IN', {
-        maximumFractionDigits: 0,
-        style: 'currency',
-        currency: 'INR'
-    });
-    currentValue = currentValue.toLocaleString('en-IN', {
-        maximumFractionDigits: 0,
-        style: 'currency',
-        currency: 'INR'
-    });
+    profit = FormatAmount(Math.abs(profit));
+    currentValue = FormatAmount(currentValue);
     if (cmp < avg) {
         $('#percentchange').html(profit_per.toFixed(2) + ' %').css('color', '#b70c0c');
         $('#netstat').html('Net Loss : <span class="net">' + profit + '</span>').css('color', '#b70c0c');
@@ -229,11 +207,7 @@ $('body').on('click', '#lossCalculatorSubmit', function(event) {
         $('.progress').css('background-color', '#076a07');
     }
     $('.progress-bar').css('width', (100 - Math.abs(profit_per)) + '%');
-    $('#cp').html(cmp.toLocaleString('en-IN', {
-        maximumFractionDigits: 0,
-        style: 'currency',
-        currency: 'INR'
-    }));
+    $('#cp').html(FormatAmount(cmp));
     let random = Math.floor(Math.random() * (11 - 5 + 1)) + 5;
     let buyprice = cmp - (cmp * random / 100);
     let buyqty = Math.floor(Math.random() * ((qty * 2 + 6) - (qty * 2 - 5) + 1)) + (qty * 2 - 5);
@@ -249,11 +223,7 @@ $('body').on('click', '#lossCalculatorSubmit', function(event) {
     let finalinvestment = totalinvestment + buyprice * buyqty;
     let sellprice = finalinvestment / selltotalqty;
     let sellprofit = Math.round(totalinvestment * netg / 100);
-    totalinvestment = totalinvestment.toLocaleString('en-IN', {
-        maximumFractionDigits: 0,
-        style: 'currency',
-        currency: 'INR'
-    });
+    totalinvestment = FormatAmount(totalinvestment);
     $('#invested').html(totalinvestment);
     $('#curvalue').html(currentValue);
     buyqty = Math.round(buyqty);

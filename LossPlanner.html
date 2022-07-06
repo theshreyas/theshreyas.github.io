@@ -21,11 +21,9 @@
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'/>
       <!-- <link rel="stylesheet" href="assets/font-awesome-6-min.css"> -->
       <link rel="stylesheet" href="assets/style.css"/>
-      <div class="ticker" style="margin:auto;max-width: 850px;">
-         <!-- TradingView Widget BEGIN -->
+      <div class="ticker" style="">
          <div class="tradingview-widget-container">
            <div class="tradingview-widget-container__widget"></div>
-           <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">Markets</span></a> by TradingView</div>
            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
            {
            "symbols": [
@@ -66,7 +64,6 @@
          }
            </script>
          </div>
-         <!-- TradingView Widget END -->
       </div>
    </head>
    <body>
@@ -126,7 +123,7 @@
             </div> -->
          </div>
          <center class="goback"><i class="fa-solid fa-caret-left"></i> Go Back</center>
-         <div class="result" style="justify-content: center;margin-top: 10px;">
+         <div class="result">
             <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
                <div class="card l-bg-orange-dark">
                   <div class="card-statistic-3 p-4">
@@ -149,14 +146,14 @@
                </div>
             </div>
          </div>
-         <div class="averageResult" style="justify-content: center;margin-top: 10px;">
+         <div class="averageResult">
             <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
                <div class="card l-bg-orange-dark">
                   <div class="card-statistic-3 p-4">
                      <div class="card-icon card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
                      <div class="card-icon2 card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
                      <div class="mb-4">
-                        <h5 class="card-title mb-0">Net Profit : <span id="cp">₹0</span> <span id="percentchange">0 % <i class="fa fa-arrow-down"></i></span></h5>
+                        <h5 class="card-title mb-0"><div>Current Value : <span id="cp">₹0</span> </div><span id="percentchange">0 % <i class="fa fa-arrow-down"></i></span></h5>
                      </div>
                      <div class="row align-items-center mb-2">
                         <div class="div-investment col-8">
@@ -172,29 +169,6 @@
                </div>
             </div>
          </div>
-<!--          <div class="averageResult" style="justify-content: center;margin-top: 10px;">
-            <div class="col-xl-3 col-lg-6" style="margin: 0 auto;">
-               <div class="card l-bg-orange-dark">
-                  <div class="card-statistic-3 p-4">
-                     <div class="card-icon card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
-                     <div class="card-icon2 card-icon-large"><i class="fas fa-indian-rupee-sign"></i></div>
-                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Current Price : <span id="cp">₹0</span> <span id="percentchange">0 % <i class="fa fa-arrow-down"></i></span></h5>
-                     </div>
-                     <div class="row align-items-center mb-2">
-                        <div class="div-investment col-8">
-                           <div class="div-total-invested">Total Invested : <span id="invested">₹0</span></div>
-                           <div class="div-current-value">Current Value : <span id="curvalue">₹0</span></div>
-                        </div>
-                        <div class="div-netloss col-4 text-right"> <span id="netstat" style="color: #b70c0c;">Net Loss : <span class="net">₹6,000</span></span></div>
-                     </div>
-                     <div class="progress mt-1" data-height="8" style="height: 8px;">
-                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> -->
          <div class="otherbuttons">
             <button id="percentageCalculator" class="btn2">Percentage Calculator</button>
             <button id="averageCalculator" class="btn2">Average Calculator</button>
@@ -227,18 +201,12 @@
       </div>
       <div style="text-align:center;margin-top: 50px;">
          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Ftheshreyas.github.io%2FLossPlanner.html&count_bg=%2328BAF2&title_bg=%230E4A8A&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
-         <a href="https://api.whatsapp.com/send?text=Check%20this%20Cool%20Share%20Market%20Loss%20Calculator%20%3A%20%20https://theshreyas.github.io/LossPlanner.html" class="whatsapp-share">
-            <i class="fa-brands fa-whatsapp"></i> <p style="color:white;display: inline;">Share</p>
+         <a href="https://api.whatsapp.com/send?text=Check%20this%20Cool%20Share%20Market%20Loss%20Calculator%20%F0%9F%8E%AF%0Ahttps%3A%2F%2Ftheshreyas.github.io%2FLossPlanner.html" class="whatsapp-share">
+            <i class="fa-brands fa-whatsapp"></i> <p>Share</p>
          </a>
       </div>
-      <!-- &count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false -->
       <script src="assets/jquery.min.js"></script>
       <script src="assets/jquery-ui.min.js"></script>
       <script  src="assets/script.js"></script>
-
    </body>
 </html>
-<!-- github pages : -->
-<!-- https://in.tradingview.com/widget/ticker-tape/ -->
-<!-- https://www.stockaveragecalculator.com/ -->
-<!-- https://www.omnicalculator.com/finance/stock-average -->

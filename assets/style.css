@@ -9,10 +9,9 @@ body {
     font: 16px 'Open Sans', sans-serif;
     color: #fff;
 }
-.tags {
-    margin: 24px auto;
-    text-align: center;
-    padding: 0 50px;
+.ticker {
+    margin: auto;
+    max-width: 850px;
 }
 .link {
     float: right;
@@ -21,24 +20,11 @@ body {
     font-size: 15px;
     color: azure;
 }
-.tags span {
-    background: rgba(0, 0, 0, .5);
-    display: inline-block;
-    margin: 3px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    transition: 0.5s linear;
-    cursor: pointer;
-}
-.tags span:hover {
-    background: #5CD4B7;
-}
 .main {
     margin-top: 20px;
 }
 header {
-    /*margin: 15px auto;*/
+    margin: 20px auto;
     text-align: center;
 }
 h1 {
@@ -90,14 +76,6 @@ li.active {
     transition: all 0.5s linear;
     color: #28BAF2;
 }
-/* .active::after{
-  position: absolute;
-  bottom: -13px;
-  content:"";
-  border: 7px solid;
-  border-color: #28BAF2 transparent transparent transparent;;
-} */
-
 .tags {
     margin: 24px auto;
     text-align: center;
@@ -112,6 +90,9 @@ li.active {
     font-size: 0.8rem;
     transition: 0.5s linear;
     cursor: pointer;
+}
+.tags span:hover {
+    background: #5CD4B7;
 }
 .tags span:hover {
     background: #28BAF2;
@@ -157,6 +138,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .result, .averageResult, .nav {
     display: none;
+}
+.result {
+    justify-content: center;
+    margin-top: 10px;
 }
 .result input {
     background-color: transparent;
@@ -407,6 +392,17 @@ span.net {
     min-height: 100%;
     padding: 2em;
 }
+.averageResult {
+    justify-content: center;
+    margin-top: 10px;
+}
+.averageResult .card-title.mb-0 {
+    display: flex;
+}
+.averageResult #percentchange {
+    position: absolute;
+    right: 10px;
+}
 .averageResult .div-total-invested, .averageResult .div-current-value {
     font-size: 21px;
 }
@@ -437,9 +433,16 @@ span.net {
     display: none;
     cursor: pointer;
 }
+p.bracket {
+    display: inline;
+    font-size: 28px;
+}
 @media only screen and (max-width: 476px) {
     .averageCalculator input {
         width: 49% !important;
+    }
+    .averageCalculator input#currentPrice {
+        width: 70% !important;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -465,12 +468,22 @@ span.net {
     #cp, #percentchange {
         font-size: 26px;
     }
+    .averageResult #percentchange {
+        font-size: 28px;
+        top: 16%;
+    }
+    p.bracket {
+        display: block;
+    }
     span.net {
         font-size: 34px;
     }
     .card-icon2 {
         left: 120px;
         top: 100px;
+    }
+    .percentageCalculator.form input[type=number] {
+        font-size: 21px !important;
     }
 }
 @media only screen and (max-width: 330px) {
@@ -547,6 +560,7 @@ span.net {
 }
 .clear {
     height: 28px;
+    margin-bottom: 25px;
 }
 .clear button {
     float: right;
@@ -566,26 +580,20 @@ span.net {
     margin-bottom: 6px;
     font-weight: bolder;
 }
-.percentageCalculator, .averageCalculator, #lossCalculator, .tradingview-widget-copyright, .selltype {
+.percentageCalculator, .averageCalculator, #lossCalculator, .selltype {
     display: none;
 }
 .otherbuttons {
-    margin-top: 40px;
-    margin: 0 auto;
-    max-width: 850px;
+    /*    margin-top: 17%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 850px;*/
+    margin-top: 13%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 750px;
+    padding: 2em;
 }
-/*#percentageCalculator {
-    float: left;
-    margin-left: 24px;
-    width: 40%;
-    background-color: #211721 !important;
-}*/
-
-/*#averageCalculator, #lossCalculator {
-    width: 40%;
-    background-color: #211721 !important;
-}*/
-
 .btn-primary:hover, .btn2:hover {
     background-color: #2EE59D;
     cursor: pointer;
@@ -607,6 +615,10 @@ span.net {
 }
 .whatsapp-share:focus {
     background-color: darken(#25d366, 15%);
+}
+.whatsapp-share p {
+    color: white;
+    display: inline;
 }
 .btn2 {
     background-color: #211721 !important;
@@ -643,6 +655,36 @@ span.net {
     text-decoration: underline;
     text-align: right;
 }
-/*.btn2:not([style*="display: none"]):first-child {
-
-}*/
+#percent_base {
+    background-color: transparent;
+    border-style: solid;
+    width: 40%;
+    text-align: center;
+    border-width: 0px 0px 1px 0px;
+    border-color: white;
+    color: white;
+    font-size: 33px;
+}
+#percent_final {
+    background-color: transparent;
+    border-style: solid;
+    width: 40%;
+    text-align: center;
+    border-width: 0px 0px 1px 0px;
+    border-color: white;
+    color: white;
+    font-size: 33px;
+    float: right;
+}
+#percent {
+    background-color: transparent;
+    border-style: solid;
+    width: 40%;
+    text-align: center;
+    border-width: 0px 0px 1px 0px;
+    border-color: white;
+    color: white;
+    font-size: 33px;
+    margin: auto;
+    display: block;
+}
