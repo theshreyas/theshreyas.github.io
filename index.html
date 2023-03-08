@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            MageDirectory - Magento 2 Extensions Directory
+        </title>
+        <meta name="description" content="MageDirectory is simply Magento 2 Extensions Directory, which you can filter by price, category & tags. As the Magento User Base increases, soon there will be demand for the various extensions. MageDirectory is the one stop solution for these needs." />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!--         <link rel="icon" type="image/png" sizes="32x32" href="logo.png"> -->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165359331-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-165359331-1');
+        </script>
+
+        <link rel="stylesheet" href="bootstrap.min.css" />
+
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <main role="main">
+
+            <div class="py-3 controls-panel control-top-panel">
+                <div class="container">
+
+                    <div class="row mb-2">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input
+                                        type="text"
+                                        data-jplist-control="textbox-filter"
+                                        data-group="group1"
+                                        data-name="name-filter"
+                                        data-path=".card-title, .description"
+                                        data-clear-btn-id="name-clear-btn"
+                                        class="form-control"
+                                        placeholder="Filter by Name" />
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="name-clear-btn">Clear</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="box8">
+                               <select id="vendor_filter" data-jplist-control="select-filter" data-group="group1" data-name="vendor-filter">
+                                   <option value="0" data-path="default" data-name="vendor-filter" data-group="group1">Filter By Vendor</option>
+                                       <option value="1" data-path=".Amasty" data-name="vendor-filter" data-group="group1">Amasty</option>
+                                       <option value="2" data-path=".Mageplaza" data-name="vendor-filter" data-group="group1">Mageplaza</option>
+                                       <option value="3" data-path=".Landofcoder" data-name="vendor-filter" data-group="group1">Landofcoder</option>
+                                       <option value="4" data-path=".Mageworx" data-name="vendor-filter" data-group="group1">Mageworx</option>
+                                       <option value="5" data-path=".Magepow" data-name="vendor-filter" data-group="group1">Magepow</option>
+                                       <option value="6" data-path=".BSSCommerce" data-name="vendor-filter" data-group="group1">BSSCommerce</option>
+                                       <option value="7" data-path=".CEDCommerce" data-name="vendor-filter" data-group="group1">CEDCommerce</option>
+                                       <option value="8" data-path=".Magecomp" data-name="vendor-filter" data-group="group1">Magecomp</option>
+                                       <option value="9" data-path=".Webkul" data-name="vendor-filter" data-group="group1">Webkul</option>
+                               </select>
+                               <button
+                                       data-jplist-control="reset"
+                                       data-group="group1"
+                                       class="btn btn-outline-secondary"
+                                       data-name="reset"
+                                       type="button">
+                                   Reset
+                               </button>
+                           </div>
+                       </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-lg-6">
+                             <div class="box8">
+                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter">
+                                    <option value="0" data-path="default" data-name="category-filter" data-group="group1">Filter Categories</option>
+
+                                    <optgroup label="Content & Customizations">
+                                        <option value="1" data-path=".translations" data-name="category-filter" data-group="group1">Translations & Localization</option>
+                                        <option value="2" data-path=".mobile" data-name="category-filter" data-group="group1">Mobile</option>
+                                        <option value="3" data-path=".personalization" data-name="category-filter" data-group="group1">Personalization & Experience Management</option>
+                                        <option value="4" data-path=".productcontent" data-name="category-filter" data-group="group1">Product Content</option>
+                                        <option value="5" data-path=".richmedia" data-name="category-filter" data-group="group1">Rich Media</option>
+                                        <option value="6" data-path=".sitesearch" data-name="category-filter" data-group="group1">Site Search & Navigation</option>
+                                        <option value="39" data-path=".blog" data-name="category-filter" data-group="group1">Blog</option>
+                                    </optgroup>
+                                    <optgroup label="Social">
+                                        <option value="40" data-path=".social" data-name="category-filter" data-group="group1">Social</option>
+                                    </optgroup>
+                                    <optgroup label="MultiVendor/Marketplace">
+                                        <option value="7" data-path=".marketplaceaddon" data-name="category-filter" data-group="group1">Marketplace Add-Ons</option>
+                                        <option value="8" data-path=".marketplacesolutions" data-name="category-filter" data-group="group1">Marketplace Solutions</option>
+                                    </optgroup>
+                                    <optgroup label="Shipping & Fulfillment">
+                                        <option value="9" data-path=".addressverification" data-name="category-filter" data-group="group1">Address Verification</option>
+                                        <option value="10" data-path=".crossborderfulfil" data-name="category-filter" data-group="group1">Cross Border Fulfillment</option>
+                                        <option value="11" data-path=".ordermgmt" data-name="category-filter" data-group="group1">Order Management (OMS)</option>
+                                        <option value="12" data-path=".warehousemgmt" data-name="category-filter" data-group="group1">Warehouse Management System (WMS)</option>
+                                        <option value="38" data-path=".shippingcustom" data-name="category-filter" data-group="group1">Shipping Customizations</option>
+                                    </optgroup>
+                                    <optgroup label="Customer Support">
+                                        <option value="13" data-path=".helpdesk" data-name="category-filter" data-group="group1">Helpdesk</option>
+                                        <option value="14" data-path=".livechat" data-name="category-filter" data-group="group1">Livechat</option>
+                                    </optgroup>
+                                    <optgroup label="Accounting & Finance">
+                                        <option value="15" data-path=".erp" data-name="category-filter" data-group="group1">ERP & Accounting</option>
+                                        <option value="16" data-path=".taxes" data-name="category-filter" data-group="group1">Taxes</option>
+                                    </optgroup>
+                                    <optgroup label="Payments & Security">
+                                        <option value="17" data-path=".checkout" data-name="category-filter" data-group="group1">Checkout Enhancements</option>
+                                        <option value="18" data-path=".fraud" data-name="category-filter" data-group="group1">Fraud Prevention</option>
+                                        <option value="19" data-path=".payment" data-name="category-filter" data-group="group1">Payment Integration</option>
+                                    </optgroup>
+                                    <optgroup label="Site Optimization">
+                                        <option value="20" data-path=".testing" data-name="category-filter" data-group="group1">Testing & Segmentation</option>
+                                        <option value="21" data-path=".hosting" data-name="category-filter" data-group="group1">Hosting</option>
+                                        <option value="22" data-path=".sitemonitoring" data-name="category-filter" data-group="group1">Site Monitoring</option>
+                                        <option value="23" data-path=".performance" data-name="category-filter" data-group="group1">Performance</option>
+                                        <option value="24" data-path=".sitemap" data-name="category-filter" data-group="group1">Sitemap</option>
+                                    </optgroup>
+                                    <optgroup label="Administration">
+                                        <option value="25" data-path=".reporting" data-name="category-filter" data-group="group1">Reporting & Analytics</option>
+                                        <option value="26" data-path=".admintools" data-name="category-filter" data-group="group1">Admin Tools</option>
+                                    </optgroup>
+                                    <optgroup label="Marketing">
+                                        <option value="27" data-path=".emailmarketing" data-name="category-filter" data-group="group1">Email Marketing</option>
+                                        <option value="28" data-path=".crm" data-name="category-filter" data-group="group1">CRM</option>
+                                        <option value="29" data-path=".seo" data-name="category-filter" data-group="group1">SEO/SEM</option>
+                                        <option value="30" data-path=".marketingautomation" data-name="category-filter" data-group="group1">Marketing Automation</option>
+                                        <option value="31" data-path=".advertising" data-name="category-filter" data-group="group1">Advertising</option>
+                                    </optgroup>
+                                    <optgroup label="Sales & Motivation">
+                                        <option value="32" data-path=".comarisonshoppingengines" data-name="category-filter" data-group="group1">Comparison Shopping Engines</option>
+                                        <option value="33" data-path=".gifts" data-name="category-filter" data-group="group1">Gifts</option>
+                                        <option value="34" data-path=".marketplacefeeds" data-name="category-filter" data-group="group1">Marketplace Feeds</option>
+                                        <option value="35" data-path=".pos" data-name="category-filter" data-group="group1">Point of Service (POS)</option>
+                                        <option value="36" data-path=".pricingpromotions" data-name="category-filter" data-group="group1">Pricing & Promotions</option>
+                                        <option value="37" data-path=".loyaltyrewards" data-name="category-filter" data-group="group1">Rewards & Loyalty</option>
+                                    </optgroup>
+                                </select>
+                                <button
+                                        data-jplist-control="reset"
+                                        data-group="group1"
+                                        class="btn btn-outline-secondary"
+                                        data-name="reset"
+                                        type="button">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 d-lg-flex align-items-center">
+                            <input
+                                    id="tags_filter"
+                                    data-jplist-control="textbox-filter"
+                                    data-group="group1"
+                                    data-name="tags-filter"
+                                    data-path=".badge"
+                                    type="text"
+                                    value=""
+                                    placeholder="Filter by Tags"
+                                    data-clear-btn-id="tags-clear-btn"
+                                    class="form-control"
+                            />
+
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="tags-clear-btn">Clear</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col flex flex-wrap align-items-start">
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".marketplace"
+                                        data-group="group1"
+                                        data-name="name94">
+                                Marketplace Only
+                                </input>
+                            </label>
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".thirdparty"
+                                        data-group="group1"
+                                        data-name="name95">
+                                Exclude Third-Party Integrators
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col flex flex-wrap align-items-start">
+                            <nav
+                                    data-jplist-control="pagination"
+                                    data-group="group1"
+                                    data-items-per-page="3"
+                                    data-current-page="0"
+                                    data-disabled-class="disabled"
+                                    data-selected-class="active"
+                                    data-jump="top"
+                                    data-name="pagination1"
+                                    class="mb-2 mr-3">
+
+                                <!-- first and previous buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
+                                    <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
+                                </ul>
+
+                                <!-- pages buttons -->
+                                <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
+                                    <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
+                                </ul>
+
+                                <!-- next and last buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
+                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
+                                </ul>
+
+                                <!-- information labels -->
+                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                    Page {pageNumber} of {pagesNumber}
+                                </span>
+
+                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                    {itemsNumber} records
+                                </span>
+
+                                <!-- items per page dropdown -->
+                                <div class="dropdown d-inline-flex ml-lg-3"
+                                     data-type="items-per-page-dd"
+                                     data-opened-class="show">
+
+                                    <button
+                                            data-type="panel"
+                                            class="btn btn-primary dropdown-toggle"
+                                            type="button">
+                                        Dropdown button
+                                    </button>
+
+                                    <div
+                                            data-type="content"
+                                            class="dropdown-menu"
+                                            aria-labelledby="dropdownMenuButton">
+
+                                        <a class="dropdown-item" href="#" data-value="4">4 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="8">8 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="12">12 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="0">View All</a>
+
+                                    </div>
+                                </div>
+
+                            </nav>
+
+                            <!-- dropdown sort control -->
+                            <div class="dropdown mr-3"
+                                 data-jplist-control="dropdown-sort"
+                                 data-opened-class="show"
+                                 data-group="group1"
+                                 data-name="sort1">
+
+                                <button
+                                        data-type="panel"
+                                        class="btn btn-primary dropdown-toggle"
+                                        type="button">
+                                    Sort by
+                                </button>
+
+                                <div
+                                        data-type="content"
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton">
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path="default">Sort By</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".card-title"
+                                       data-order="asc"
+                                       data-type="text">Name A-Z</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".card-title"
+                                       data-order="desc"
+                                       data-type="text">Name Z-A</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".vendorname"
+                                       data-order="asc"
+                                       data-type="text">Vendor A-Z</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".vendorname"
+                                       data-order="desc"
+                                       data-type="text">Vendor Z-A</a>
+
+                                    <!-- <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".price .val"
+                                       data-order="asc"
+                                       data-type="text">Price low to high</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".price .val"
+                                       data-order="desc"
+                                       data-type="text">Price high to low</a> -->
+                                </div>
+                            </div>
+
+                            <!-- reset control -->
+                            <button
+                                    data-jplist-control="reset"
+                                    data-group="group1"
+                                    data-name="reset"
+                                    class="btn btn-secondary"
+                                    type="button">
+                                Reset All
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="py-5 bg-light">
+                <div class="container">
+
+                    <div class="row" data-jplist-group="group1" id="parentBox">
+                        <!-- no results control -->
+                        <div class="col text-center" data-jplist-control="no-results" data-group="group1" data-name="no-results">No Results Found</div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="py-3 py-lg-5 controls-panel control-bottom-panel">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col flex">
+                            <!-- pagination control -->
+                            <nav
+                                    data-jplist-control="pagination"
+                                    data-group="group1"
+                                    data-items-per-page="8"
+                                    data-current-page="0"
+                                    data-disabled-class="disabled"
+                                    data-selected-class="active"
+                                    data-jump="top"
+                                    data-name="pagination1"
+                                    class="mb-2 mb-lg-0">
+
+                                <!-- first and previous buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
+                                    <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
+                                </ul>
+
+                                <!-- pages buttons -->
+                                <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
+                                    <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
+                                </ul>
+
+                                <!-- next and last buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
+                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
+                                </ul>
+
+                                <!-- information labels -->
+                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                    {startItem} - {endItem} of {itemsNumber}
+                                </span>
+
+                                <!-- items per page dropdown -->
+                                <div class="dropdown d-inline-flex ml-3"
+                                     data-type="items-per-page-dd"
+                                     data-opened-class="show">
+
+                                    <button
+                                            data-type="panel"
+                                            class="btn btn-primary dropdown-toggle"
+                                            type="button">Items per page</button>
+
+                                    <div
+                                            data-type="content"
+                                            class="dropdown-menu"
+                                            aria-labelledby="dropdownMenuButton">
+
+                                        <a class="dropdown-item" href="#" data-value="3">3 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="6">6 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="9">9 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="0">View All</a>
+
+                                    </div>
+                                </div>
+
+                            </nav>
+
+                            <!-- dropdown sort control -->
+                            <div class="dropdown ml-3"
+                                 data-jplist-control="dropdown-sort"
+                                 data-opened-class="show"
+                                 data-group="group1"
+                                 data-name="sort1">
+
+                                <button
+                                        data-type="panel"
+                                        class="btn btn-primary dropdown-toggle"
+                                        type="button">
+                                    Sort by
+                                </button>
+
+                                <div
+                                        data-type="content"
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton">
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path="default">Sort By</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".card-title"
+                                       data-order="asc"
+                                       data-type="text">Title A-Z</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".card-title"
+                                       data-order="desc"
+                                       data-type="text">Title Z-A</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".description"
+                                       data-order="asc"
+                                       data-type="text">Description A-Z</a>
+
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       data-path=".description"
+                                       data-order="desc"
+                                       data-type="text">Description Z-A</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    <!-- IE / Edge babel polyfill -->
+    <script src="polyfill.min.js"></script>
+    <script src="jplist.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script src="lazysizes.min.js"></script>
+    <script>
+// https://www.jqueryscript.net/demo/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect/
+// https://www.jqueryscript.net/form/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect.html
+        function autocomplete(inp, arr) {
+            //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
+            var currentFocus;
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(a);
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                      b = document.createElement("DIV");
+                      b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                      b.innerHTML += arr[i].substr(val.length);
+                      b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                      b.addEventListener("click", function(e) {
+                          inp.value = this.getElementsByTagName("input")[0].value;
+                          closeAllLists();
+                      });
+                      a.appendChild(b);
+                    }
+                }
+            });
+            inp.addEventListener("keydown", function(e) {
+              var x = document.getElementById(this.id + "autocomplete-list");
+              if (x) x = x.getElementsByTagName("div");
+              if (e.keyCode == 40) {
+                currentFocus++;
+                addActive(x);
+              } else if (e.keyCode == 38) { //up
+                currentFocus--;
+                addActive(x);
+              } else if (e.keyCode == 13) {
+                e.preventDefault();
+                if (currentFocus > -1) {
+                  if (x) x[currentFocus].click();
+                }
+              }
+            });
+            
+            function addActive(x) {
+                if (!x) return false;
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+        autocomplete(document.getElementById("tags_filter"), countries);
+
+        var categories = {
+                          "translations": "Translations & Localization",
+                          "mobile": "Mobile",
+                          "personalization": "Personalization & Experience Management",
+                          "productcontent": "Product Content",
+                          "richmedia": "Rich Media",
+                          "sitesearch": "Site Search & Navigation",
+                          "blog": "Blog",
+                          "social": "Social",
+                          "marketplaceaddon": "Marketplace Add-Ons",
+                          "marketplacesolutions": "Marketplace Solutions",
+                          "addressverification": "Address Verification",
+                          "crossborderfulfil": "Cross Border Fulfillment",
+                          "ordermgmt": "Order Management (OMS)",
+                          "warehousemgmt": "Warehouse Management System (WMS)",
+                          "shippingcustom": "Shipping Customizations",
+                          "helpdesk": "Helpdesk",
+                          "livechat": "Livechat",
+                          "erp": "ERP & Accounting",
+                          "taxes": "Taxes",
+                          "checkout": "Checkout Enhancements",
+                          "fraud": "Fraud Prevention",
+                          "payment": "Payment Integration",
+                          "testing": "Testing & Segmentation",
+                          "hosting": "Hosting",
+                          "sitemonitoring": "Site Monitoring",
+                          "performance": "Performance",
+                          "sitemap": "Sitemap",
+                          "reporting": "Reporting & Analytics",
+                          "admintools": "Admin Tools",
+                          "emailmarketing": "Email Marketing",
+                          "crm": "CRM",
+                          "seo": "SEO/SEM",
+                          "marketingautomation": "Marketing Automation",
+                          "advertising": "Advertising",
+                          "comarisonshoppingengines": "Comparison Shopping Engines",
+                          "gifts": "Gifts",
+                          "marketplacefeeds": "Marketplace Feeds",
+                          "pos": "Point of Service (POS)",
+                          "pricingpromotions": "Pricing & Promotions",
+                          "loyaltyrewards": "Rewards & Loyalty"
+                        };
+
+        var vendorImages = ["Magepow","CEDCommerce","Landofcoder","Mageworx","Amasty","Magecomp","BSSCommerce","Mageplaza","Webkul"];
+        // var select = document.getElementById("category_filter");",        var l=0;
+        // for(index in categories) {
+        //     l = select.options.length;
+        //     select.options[l] = new Option(categories[index], l);
+        //     select.options[l].setAttribute("data-path", "."+index);
+        // }
+        Papa.parse("https://theshreyas.github.io/ext_all.csv", {
+            download: true,
+            complete: function(results) {
+                loadResults(results);
+            }
+        });
+
+        function getCategory(object, value) {//returns key by value
+            return Object.keys(object).find(key => object[key] === value);
+        }
+
+        function loadResults(csvData){
+
+            jplist.init();
+
+            var parentBox = document.getElementById('parentBox');
+
+            var index = 0;
+            var CategoryKey = undefined;
+
+            var allDivs = [];
+            var vendorlist = [];
+            csvData.data.forEach((obj)=>{
+
+                if(index != 0 && obj[0] != null && obj[2] != null){
+
+                    var name = obj[1];
+                    var description = obj[2];
+                    var price = obj[3];
+                    var url = obj[4];
+                    var reviews = obj[5];
+                    var image = obj[6];
+                    var vendor = obj[7];
+                    var tags = obj[8];
+                    var activeCategory = obj[9];
+                    var Isthirdpary = obj[14];
+                    const divv = document.createElement('div');
+                    divv.setAttribute('class', 'col-md-3 mb-4 divv');
+                    divv.setAttribute('data-jplist-item', '');
+                    console.log(name);
+                    console.log(Isthirdpary);
+                    var tags_html = '';
+                    var tags_array = tags.split(',');
+                    for(var i = 0; i < tags_array.length; i++) 
+                    {
+                        tags_html += '<span class="badge '+(i%2 === 0 ? 'badge-info' : 'badge-secondary')+'">'+tags_array[i]+'</span>';
+                    }
+
+                    if(activeCategory in categories){
+                        CategoryKey = activeCategory;
+                    }
+                    var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
+                    var martkeplaceExt = url.includes('marketplace.magento') ? '<div class="marketplace"></div>' : '';
+                    var thirdpartyExt = Isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
+                    // var CategoryKey = getCategory(categories,activeCategory);
+                    // console.log(activeCategory+' => '+ CategoryKey);
+
+                    divv.innerHTML = '<div class="card box-shadow">'+
+                                        '<div class="car-img">'+
+                                            '<img class="card-img-top lazyload" alt="'+name+'" data-src="'+image+'"/>'+
+                                        '</div>'+
+                                        '<div class="card-header">'+
+                                            '<h5 class="card-title mb-0">'+
+                                                '<a target="_blank" href="'+url+'" title="'+name+'">'+name+'</a>'+
+                                            '</h5>'+
+                                        '</div>'+
+                                        '<ul class="list-group list-group-flush">'+
+                                            '<li class="list-group-item">'+
+                                                '<span class="description">'+description+'</span>'+
+                                            '</li>'+
+                                            '<li class="list-group-item">'+
+                                                '<div class="companyLogo '+vendor+'">'+vendorimage+
+                                                '</div>'+
+                                            '</li>'+
+                                        '</ul>'+
+                                        '<div style="display:none;">'+
+                                            '<div class="'+CategoryKey+'">'+activeCategory+'</div>'+
+                                            '<div class="vendorname">'+vendor+'</div>'+martkeplaceExt+thirdpartyExt+
+                                        '</div>'+
+                                        '<div class="card-body">'+
+                                            tags_html+
+                                            // '<span class="badge badge-info">tagExample</span>'+
+                                            // '<span class="badge badge-secondary">aerial view</span>'+
+                                            // '<span class="badge badge-info">mountain range</span>'+
+                                            // '<span class="badge badge-secondary">blue</span>'+
+                                            // '<span class="badge badge-info">snow</span>'+
+                                        // '</div>'+
+                                    '</div>';
+                    allDivs.push(divv);
+                    vendorlist.push(vendor);
+                }
+                index++;
+            });
+
+            jplist.resetContent(function(){
+                allDivs.forEach((div)=>{
+                    parentBox.appendChild(div);
+                });
+            });
+//             console.log(vendorlist.filter(function(value, index, self) {
+//   return self.indexOf(value) === index;
+// }));
+        }
+
+    </script>
+    </body>
+</html>
