@@ -1,8 +1,7 @@
 .card{
-    font-size: 12px;
+    font-size: 14px;
     height: 100%;
 }
-
 .card-header{
     background-color: rgb(227, 236, 243);
 }
@@ -28,11 +27,19 @@
     display: flex;
 }
 
-.car-img{
+.back-img{
     background: linear-gradient(to bottom right, #2c2f31, #007cfb);
+    position:relative;
 }
-
-.car-img img{
+img.githubavailable {
+    height: 36px;
+    /* width: 79px; */
+    position: absolute;
+    bottom: 6px;
+    /* opacity: 64%; */
+    right: 8px;
+}
+.back-img > img:first-child{
     width: 150px;
     height: 120px;
     margin: 30px auto;
@@ -170,48 +177,45 @@
   /*left: 0;old*/
   /*newadded by me*/
   left: 3%;
-  width: : 83%;
+  width: 83%;
+  max-height: 700px;
+  overflow: auto;
   /*added by me*/
   right: 0;
 }
 
 .autocomplete-items div {
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
-  background-color: #fff; 
-  border-bottom: 1px solid #d4d4d4; 
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
 }
 
 /*when hovering an item:*/
 .autocomplete-items div:hover {
-  background-color: #e9e9e9; 
+  background-color: #e9e9e9;
 }
 
 /*when navigating through the items using the arrow keys:*/
 .autocomplete-active {
-  background-color: DodgerBlue !important; 
-  color: #ffffff; 
+  background-color: DodgerBlue !important;
+  color: #ffffff;
 }
 
 
 .box8 select {
-  /*background-color: #007bff;*/
   color: black;
   padding: 7px;
   width: 86%;
+  background-color: white;
   border: none;
   font-size: 17px;
-  box8-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   -webkit-appearance: button;
   appearance: button;
   outline: none;
 }
 
-/*.box8:hover::before {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-*/
 .box8 select option {
     padding: 30px;
     overflow: hidden;
@@ -234,4 +238,22 @@
 }
 .companyLogo img{
   height: 13px;
+}
+.checkbox_label {margin-left:10px;}
+@media (min-width: 768px){
+    .topfilters {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width:1140px; 
+    }
+    .container { max-width:1600px; }
+    .col-md-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }
