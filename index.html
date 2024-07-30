@@ -7,7 +7,7 @@
         <meta name="description" content="MageDirectory is simply Magento 2 Extensions Directory, which you can filter by price, category & tags. As the Magento User Base increases, soon there will be demand for the various extensions. MageDirectory is the one stop solution for these needs." />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<!--         <link rel="icon" type="image/png" sizes="32x32" href="logo.png"> -->
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165359331-1"></script>
@@ -17,19 +17,40 @@
           gtag('js', new Date());
           gtag('config', 'UA-165359331-1');
         </script>
-
         <link rel="stylesheet" href="bootstrap.min.css" />
-
         <link href="style.css" rel="stylesheet" type="text/css" />
-
     </head>
-
     <body>
 
-        <main role="main">
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row main-navbar" style="min-height: 4rem;background-color: #404040;">
+        <span id="MainLogo" class="navbar-brand mr-0 mr-md-4" style="font-size: 35px;margin-left: 35px;">MageDirectory</span>
+        <div class="navbar-nav-scroll" style="margin: auto;">
+            <h4 style="color:white;margin: auto;">Directory of All Free Magento Extensions</h4>
+        </div>
 
+        <ul class="navbar-nav flex-row d-none d-md-flex">
+
+            <li class="nav-item">
+                <script async defer src="https://buttons.github.io/buttons.js">
+                </script>
+                <a class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" href="https://github.com/theshreyas/theshreyas.github.io" data-icon="octicon-star" data-size="large" aria-label="Star ntkme/github-buttons on GitHub">
+                    Star
+                </a>
+                <a aria-label="Watch theshreyas/theshreyas.github.io on GitHub" class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" href="https://github.com/theshreyas/theshreyas.github.io/subscription">
+                    Watch
+                </a>
+                <a aria-label="Issue theshreyas/theshreyas.github.io on GitHub" class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-issue-opened" data-size="large" href="https://github.com/theshreyas/theshreyas.github.io/issues">
+                    Issue
+                </a>
+
+            </li>
+        </ul>
+    </header>
+
+
+        <main role="main">
             <div class="py-3 controls-panel control-top-panel">
-                <div class="container">
+                <div class="topfilters">
 
                     <div class="row mb-2">
                         <div class="col-lg-6">
@@ -54,24 +75,23 @@
                         <div class="col-lg-6">
                             <div class="box8">
                                <select id="vendor_filter" data-jplist-control="select-filter" data-group="group1" data-name="vendor-filter">
-                                   <option value="0" data-path="default" data-name="vendor-filter" data-group="group1">Filter By Vendor</option>
-                                       <option value="1" data-path=".Amasty" data-name="vendor-filter" data-group="group1">Amasty</option>
-                                       <option value="2" data-path=".Mageplaza" data-name="vendor-filter" data-group="group1">Mageplaza</option>
-                                       <option value="3" data-path=".Landofcoder" data-name="vendor-filter" data-group="group1">Landofcoder</option>
-                                       <option value="4" data-path=".Mageworx" data-name="vendor-filter" data-group="group1">Mageworx</option>
-                                       <option value="5" data-path=".Magepow" data-name="vendor-filter" data-group="group1">Magepow</option>
-                                       <option value="6" data-path=".BSSCommerce" data-name="vendor-filter" data-group="group1">BSSCommerce</option>
-                                       <option value="7" data-path=".CEDCommerce" data-name="vendor-filter" data-group="group1">CEDCommerce</option>
-                                       <option value="8" data-path=".Magecomp" data-name="vendor-filter" data-group="group1">Magecomp</option>
-                                       <option value="9" data-path=".Webkul" data-name="vendor-filter" data-group="group1">Webkul</option>
+                                    <option value="0" data-path="default">Filter By Vendor</option>
+                                    <option value="1" data-path=".Amasty">Amasty</option>
+                                    <option value="2" data-path=".Mageplaza">Mageplaza</option>
+                                    <option value="3" data-path=".Landofcoder">Landofcoder</option>
+                                    <option value="4" data-path=".Mageworx">Mageworx</option>
+                                    <option value="5" data-path=".Magepow">Magepow</option>
+                                    <option value="6" data-path=".BSSCommerce">BSSCommerce</option>
+                                    <option value="7" data-path=".CEDCommerce">CEDCommerce</option>
+                                    <option value="8" data-path=".Magecomp">Magecomp</option>
+                                    <option value="9" data-path=".Webkul">Webkul</option>
                                </select>
                                <button
-                                       data-jplist-control="reset"
-                                       data-group="group1"
-                                       class="btn btn-outline-secondary"
-                                       data-name="reset"
-                                       type="button">
-                                   Reset
+                                    data-jplist-control="reset"
+                                    data-group="group1"
+                                    class="btn btn-outline-secondary"
+                                    data-name="reset"
+                                    type="button">Reset
                                </button>
                            </div>
                        </div>
@@ -80,70 +100,70 @@
                     <div class="row mb-2">
                         <div class="col-lg-6">
                              <div class="box8">
-                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter">
-                                    <option value="0" data-path="default" data-name="category-filter" data-group="group1">Filter Categories</option>
+                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter" data-clear-btn-id="category-clear-btn">
+                                    <option value="0" data-path="default">Filter Categories</option>
 
                                     <optgroup label="Content & Customizations">
-                                        <option value="1" data-path=".translations" data-name="category-filter" data-group="group1">Translations & Localization</option>
-                                        <option value="2" data-path=".mobile" data-name="category-filter" data-group="group1">Mobile</option>
-                                        <option value="3" data-path=".personalization" data-name="category-filter" data-group="group1">Personalization & Experience Management</option>
-                                        <option value="4" data-path=".productcontent" data-name="category-filter" data-group="group1">Product Content</option>
-                                        <option value="5" data-path=".richmedia" data-name="category-filter" data-group="group1">Rich Media</option>
-                                        <option value="6" data-path=".sitesearch" data-name="category-filter" data-group="group1">Site Search & Navigation</option>
-                                        <option value="39" data-path=".blog" data-name="category-filter" data-group="group1">Blog</option>
+                                        <option value="1" data-path=".translations">Translations & Localization</option>
+                                        <option value="2" data-path=".mobile">Mobile</option>
+                                        <option value="3" data-path=".personalization">Personalization & Experience Management</option>
+                                        <option value="4" data-path=".productcontent">Product Content</option>
+                                        <option value="5" data-path=".richmedia">Rich Media</option>
+                                        <option value="6" data-path=".sitesearch">Site Search & Navigation</option>
+                                        <option value="39" data-path=".blog">Blog</option>
                                     </optgroup>
                                     <optgroup label="Social">
-                                        <option value="40" data-path=".social" data-name="category-filter" data-group="group1">Social</option>
+                                        <option value="40" data-path=".social">Social</option>
                                     </optgroup>
                                     <optgroup label="MultiVendor/Marketplace">
-                                        <option value="7" data-path=".marketplaceaddon" data-name="category-filter" data-group="group1">Marketplace Add-Ons</option>
-                                        <option value="8" data-path=".marketplacesolutions" data-name="category-filter" data-group="group1">Marketplace Solutions</option>
+                                        <option value="7" data-path=".marketplaceaddon">Marketplace Add-Ons</option>
+                                        <option value="8" data-path=".marketplacesolutions">Marketplace Solutions</option>
                                     </optgroup>
                                     <optgroup label="Shipping & Fulfillment">
-                                        <option value="9" data-path=".addressverification" data-name="category-filter" data-group="group1">Address Verification</option>
-                                        <option value="10" data-path=".crossborderfulfil" data-name="category-filter" data-group="group1">Cross Border Fulfillment</option>
-                                        <option value="11" data-path=".ordermgmt" data-name="category-filter" data-group="group1">Order Management (OMS)</option>
-                                        <option value="12" data-path=".warehousemgmt" data-name="category-filter" data-group="group1">Warehouse Management System (WMS)</option>
-                                        <option value="38" data-path=".shippingcustom" data-name="category-filter" data-group="group1">Shipping Customizations</option>
+                                        <option value="9" data-path=".addressverification">Address Verification</option>
+                                        <option value="10" data-path=".crossborderfulfil">Cross Border Fulfillment</option>
+                                        <option value="11" data-path=".ordermgmt">Order Management (OMS)</option>
+                                        <option value="12" data-path=".warehousemgmt">Warehouse Management System (WMS)</option>
+                                        <option value="38" data-path=".shippingcustom">Shipping Customizations</option>
                                     </optgroup>
                                     <optgroup label="Customer Support">
-                                        <option value="13" data-path=".helpdesk" data-name="category-filter" data-group="group1">Helpdesk</option>
-                                        <option value="14" data-path=".livechat" data-name="category-filter" data-group="group1">Livechat</option>
+                                        <option value="13" data-path=".helpdesk">Helpdesk</option>
+                                        <option value="14" data-path=".livechat">Livechat</option>
                                     </optgroup>
                                     <optgroup label="Accounting & Finance">
-                                        <option value="15" data-path=".erp" data-name="category-filter" data-group="group1">ERP & Accounting</option>
-                                        <option value="16" data-path=".taxes" data-name="category-filter" data-group="group1">Taxes</option>
+                                        <option value="15" data-path=".erp">ERP & Accounting</option>
+                                        <option value="16" data-path=".taxes">Taxes</option>
                                     </optgroup>
                                     <optgroup label="Payments & Security">
-                                        <option value="17" data-path=".checkout" data-name="category-filter" data-group="group1">Checkout Enhancements</option>
-                                        <option value="18" data-path=".fraud" data-name="category-filter" data-group="group1">Fraud Prevention</option>
-                                        <option value="19" data-path=".payment" data-name="category-filter" data-group="group1">Payment Integration</option>
+                                        <option value="17" data-path=".checkout">Checkout Enhancements</option>
+                                        <option value="18" data-path=".fraud">Fraud Prevention</option>
+                                        <option value="19" data-path=".payment">Payment Integration</option>
                                     </optgroup>
                                     <optgroup label="Site Optimization">
-                                        <option value="20" data-path=".testing" data-name="category-filter" data-group="group1">Testing & Segmentation</option>
-                                        <option value="21" data-path=".hosting" data-name="category-filter" data-group="group1">Hosting</option>
-                                        <option value="22" data-path=".sitemonitoring" data-name="category-filter" data-group="group1">Site Monitoring</option>
-                                        <option value="23" data-path=".performance" data-name="category-filter" data-group="group1">Performance</option>
-                                        <option value="24" data-path=".sitemap" data-name="category-filter" data-group="group1">Sitemap</option>
+                                        <option value="20" data-path=".testing">Testing & Segmentation</option>
+                                        <option value="21" data-path=".hosting">Hosting</option>
+                                        <option value="22" data-path=".sitemonitoring">Site Monitoring</option>
+                                        <option value="23" data-path=".performance">Performance</option>
+                                        <option value="24" data-path=".sitemap">Sitemap</option>
                                     </optgroup>
                                     <optgroup label="Administration">
-                                        <option value="25" data-path=".reporting" data-name="category-filter" data-group="group1">Reporting & Analytics</option>
-                                        <option value="26" data-path=".admintools" data-name="category-filter" data-group="group1">Admin Tools</option>
+                                        <option value="25" data-path=".reporting">Reporting & Analytics</option>
+                                        <option value="26" data-path=".admintools">Admin Tools</option>
                                     </optgroup>
                                     <optgroup label="Marketing">
-                                        <option value="27" data-path=".emailmarketing" data-name="category-filter" data-group="group1">Email Marketing</option>
-                                        <option value="28" data-path=".crm" data-name="category-filter" data-group="group1">CRM</option>
-                                        <option value="29" data-path=".seo" data-name="category-filter" data-group="group1">SEO/SEM</option>
-                                        <option value="30" data-path=".marketingautomation" data-name="category-filter" data-group="group1">Marketing Automation</option>
-                                        <option value="31" data-path=".advertising" data-name="category-filter" data-group="group1">Advertising</option>
+                                        <option value="27" data-path=".emailmarketing">Email Marketing</option>
+                                        <option value="28" data-path=".crm">CRM</option>
+                                        <option value="29" data-path=".seo">SEO/SEM</option>
+                                        <option value="30" data-path=".marketingautomation">Marketing Automation</option>
+                                        <option value="31" data-path=".advertising">Advertising</option>
                                     </optgroup>
                                     <optgroup label="Sales & Motivation">
-                                        <option value="32" data-path=".comarisonshoppingengines" data-name="category-filter" data-group="group1">Comparison Shopping Engines</option>
-                                        <option value="33" data-path=".gifts" data-name="category-filter" data-group="group1">Gifts</option>
-                                        <option value="34" data-path=".marketplacefeeds" data-name="category-filter" data-group="group1">Marketplace Feeds</option>
-                                        <option value="35" data-path=".pos" data-name="category-filter" data-group="group1">Point of Service (POS)</option>
-                                        <option value="36" data-path=".pricingpromotions" data-name="category-filter" data-group="group1">Pricing & Promotions</option>
-                                        <option value="37" data-path=".loyaltyrewards" data-name="category-filter" data-group="group1">Rewards & Loyalty</option>
+                                        <option value="32" data-path=".comarisonshoppingengines">Comparison Shopping Engines</option>
+                                        <option value="33" data-path=".gifts">Gifts</option>
+                                        <option value="34" data-path=".marketplacefeeds">Marketplace Feeds</option>
+                                        <option value="35" data-path=".pos">Point of Service (POS)</option>
+                                        <option value="36" data-path=".pricingpromotions">Pricing & Promotions</option>
+                                        <option value="37" data-path=".loyaltyrewards">Rewards & Loyalty</option>
                                     </optgroup>
                                 </select>
                                 <button
@@ -179,7 +199,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="col flex flex-wrap align-items-start">
+                        <div class="col flex flex-wrap align-items-start" style="margin-top:5px;">
                             <label class="checkbox_label">
                                 <input
                                         type="checkbox"
@@ -198,6 +218,26 @@
                                         data-group="group1"
                                         data-name="name95">
                                 Exclude Third-Party Integrators
+                                </input>
+                            </label>
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".githubavailable"
+                                        data-group="group1"
+                                        data-name="name96">
+                                Available on GitHub
+                                </input>
+                            </label>
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".pwaready"
+                                        data-group="group1"
+                                        data-name="name97">
+                                PWA Ready
                                 </input>
                             </label>
                         </div>
@@ -359,7 +399,7 @@
             </div>
 
             <div class="py-3 py-lg-5 controls-panel control-bottom-panel">
-                <div class="container">
+                <div class="topfilters">
 
                     <div class="row">
                         <div class="col flex">
@@ -367,7 +407,7 @@
                             <nav
                                     data-jplist-control="pagination"
                                     data-group="group1"
-                                    data-items-per-page="8"
+                                    data-items-per-page="15"
                                     data-current-page="0"
                                     data-disabled-class="disabled"
                                     data-selected-class="active"
@@ -488,8 +528,46 @@
         function autocomplete(inp, arr) {
             //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
             var currentFocus;
+            inp.addEventListener("focus", function(e) {
+                var a,val = this.value.trim();
+                if(val == ""){
+                    a = document.querySelector("#"+this.id + "autocomplete-list");
+                    if(!a){
+                        a = document.createElement("DIV");
+                        a.setAttribute("id", this.id + "autocomplete-list");
+                        a.setAttribute("class", "autocomplete-items");
+                        this.parentNode.appendChild(a);
+                    }
+                    for (i = 0; i < arr.length; i++) {
+                        if (arr[i].toUpperCase().includes(val.toUpperCase())) {
+
+                          b = document.createElement("DIV");
+                          c = arr[i].toUpperCase().indexOf(val.toUpperCase());
+
+                          substring = arr[i].substr(c, val.length);
+                          replaced = arr[i].replace(substring, '<b>' + substring + '</b>');
+
+                          b.innerHTML = replaced;
+                          b.innerHTML += "<input type='hidden' value='" + arr[i].trim() + "'>";
+                          b.addEventListener("click", function(e) {
+                            inp.value = this.getElementsByTagName("input")[0].value.trim();
+                            window.history.replaceState(null, null, "?tag="+inp.value);
+                            inp.dispatchEvent(new Event('keyup'));
+                            // document.getElementById('tags_filter').dispatchEvent(new Event('change'));
+                            // inp.click();
+                            // b.click();
+                            // inp.dispatchEvent(new Event('change'));
+                            closeAllLists();
+                          });
+                          a.appendChild(b);
+                        }
+                    }
+
+                }
+            });
             inp.addEventListener("input", function(e) {
-                var a, b, i, val = this.value;
+                var a, b, c, i, val = this.value;
+                var substring,replaced;
                 closeAllLists();
                 if (!val) { return false;}
                 currentFocus = -1;
@@ -498,14 +576,21 @@
                 a.setAttribute("class", "autocomplete-items");
                 this.parentNode.appendChild(a);
                 for (i = 0; i < arr.length; i++) {
-                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    if (arr[i].toUpperCase().includes(val.toUpperCase())) {
+
                       b = document.createElement("DIV");
-                      b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                      b.innerHTML += arr[i].substr(val.length);
-                      b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                      c      = arr[i].toUpperCase().indexOf(val.toUpperCase());
+
+                      substring = arr[i].substr(c, val.length);
+                      replaced = arr[i].replace(substring, '<b>' + substring + '</b>');
+
+                      b.innerHTML = replaced;
+                      b.innerHTML += "<input type='hidden' value='" + arr[i].trim() + "'>";
                       b.addEventListener("click", function(e) {
-                          inp.value = this.getElementsByTagName("input")[0].value;
-                          closeAllLists();
+                        inp.value = this.getElementsByTagName("input")[0].value.trim();
+                        window.history.replaceState(null, null, "?tag="+inp.value);
+                        inp.dispatchEvent(new Event('keyup'));
+                        closeAllLists();
                       });
                       a.appendChild(b);
                     }
@@ -531,6 +616,7 @@
             function addActive(x) {
                 if (!x) return false;
                 removeActive(x);
+                if(!currentFocus) currentFocus = 0;
                 if (currentFocus >= x.length) currentFocus = 0;
                 if (currentFocus < 0) currentFocus = (x.length - 1);
                 x[currentFocus].classList.add("autocomplete-active");
@@ -553,12 +639,7 @@
                 closeAllLists(e.target);
             });
         }
-
-        /*An array containing all the country names in the world:*/
-        var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-
-        autocomplete(document.getElementById("tags_filter"), countries);
-
+        
         var categories = {
                           "translations": "Translations & Localization",
                           "mobile": "Mobile",
@@ -609,7 +690,8 @@
         //     select.options[l] = new Option(categories[index], l);
         //     select.options[l].setAttribute("data-path", "."+index);
         // }
-        Papa.parse("https://theshreyas.github.io/ext_all.csv", {
+        // Papa.parse("/ext-fre.csv", {
+        Papa.parse("https://shreyas-dh.github.io/ext_all.csv", {
             download: true,
             complete: function(results) {
                 loadResults(results);
@@ -631,6 +713,7 @@
 
             var allDivs = [];
             var vendorlist = [];
+            var allTags = [];
             csvData.data.forEach((obj)=>{
 
                 if(index != 0 && obj[0] != null && obj[2] != null){
@@ -644,17 +727,20 @@
                     var vendor = obj[7];
                     var tags = obj[8];
                     var activeCategory = obj[9];
+                    var github_url = obj[10];
                     var Isthirdpary = obj[14];
+                    var pwaready = obj[16];
                     const divv = document.createElement('div');
                     divv.setAttribute('class', 'col-md-3 mb-4 divv');
                     divv.setAttribute('data-jplist-item', '');
-                    console.log(name);
-                    console.log(Isthirdpary);
                     var tags_html = '';
                     var tags_array = tags.split(',');
                     for(var i = 0; i < tags_array.length; i++) 
                     {
-                        tags_html += '<span class="badge '+(i%2 === 0 ? 'badge-info' : 'badge-secondary')+'">'+tags_array[i]+'</span>';
+                        if(tags_array[i] != ""){
+                            tags_html += '<span class="badge '+(i%2 === 0 ? 'badge-info' : 'badge-secondary')+'">'+tags_array[i]+'</span>';
+                            allTags.push(tags_array[i]);
+                        }
                     }
 
                     if(activeCategory in categories){
@@ -662,14 +748,13 @@
                     }
                     var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
                     var martkeplaceExt = url.includes('marketplace.magento') ? '<div class="marketplace"></div>' : '';
+                    var isPWAReady = pwaready == 0 ? '<div class="pwaready"></div>' : '';
                     var thirdpartyExt = Isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
+                    var githubUrl = github_url ==  '' ||  github_url ==  null || github_url ==  'null' ? '' : '<a href="'+github_url+'"><img class="githubavailable" alt="Available on Github" title="Available on Github" src="Gh.png"></a>';
                     // var CategoryKey = getCategory(categories,activeCategory);
                     // console.log(activeCategory+' => '+ CategoryKey);
 
                     divv.innerHTML = '<div class="card box-shadow">'+
-                                        '<div class="car-img">'+
-                                            '<img class="card-img-top lazyload" alt="'+name+'" data-src="'+image+'"/>'+
-                                        '</div>'+
                                         '<div class="card-header">'+
                                             '<h5 class="card-title mb-0">'+
                                                 '<a target="_blank" href="'+url+'" title="'+name+'">'+name+'</a>'+
@@ -677,7 +762,7 @@
                                         '</div>'+
                                         '<ul class="list-group list-group-flush">'+
                                             '<li class="list-group-item">'+
-                                                '<span class="description">'+description+'</span>'+
+                                                '<span class="description">'+truncate(description,240)+'</span>'+
                                             '</li>'+
                                             '<li class="list-group-item">'+
                                                 '<div class="companyLogo '+vendor+'">'+vendorimage+
@@ -687,32 +772,64 @@
                                         '<div style="display:none;">'+
                                             '<div class="'+CategoryKey+'">'+activeCategory+'</div>'+
                                             '<div class="vendorname">'+vendor+'</div>'+martkeplaceExt+thirdpartyExt+
+                                            +isPWAReady+
                                         '</div>'+
                                         '<div class="card-body">'+
                                             tags_html+
-                                            // '<span class="badge badge-info">tagExample</span>'+
-                                            // '<span class="badge badge-secondary">aerial view</span>'+
-                                            // '<span class="badge badge-info">mountain range</span>'+
-                                            // '<span class="badge badge-secondary">blue</span>'+
-                                            // '<span class="badge badge-info">snow</span>'+
-                                        // '</div>'+
                                     '</div>';
                     allDivs.push(divv);
                     vendorlist.push(vendor);
                 }
                 index++;
             });
-
+            
+            function truncate(str, n){
+              return (str.length > n) ? str.slice(0, n-1) + '&hellip;' : str;
+            };
             jplist.resetContent(function(){
                 allDivs.forEach((div)=>{
                     parentBox.appendChild(div);
                 });
             });
-//             console.log(vendorlist.filter(function(value, index, self) {
-//   return self.indexOf(value) === index;
-// }));
+            var allUniqueTags = [...new Set(allTags)];
+            
+            autocomplete(document.getElementById("tags_filter"), allUniqueTags); 
+            //             console.log(vendorlist.filter(function(value, index, self) {
+            //   return self.indexOf(value) === index;
+            // }));
+            const queryString = window.location.search;
+            if (queryString.includes("?tag=")) {
+                const URLTag = queryString.split("?tag=").slice(1);
+                console.log(URLTag);
+            }
         }
 
     </script>
     </body>
 </html>
+<!--
+TODO
+scrape all github data
+scrape all marketplace data
+scrape individual vendor data and save in db
+curate/edit data/assign tags+category(ext.php)
+display github link/marketplace link/logo/pwa-ready icon
+https://saijogeorge.com/best-marketing-tools/ show tools for magento developer
+
+#Phase 2
+    display grid view/list view
+    hyva themes compatible filter
+    add similar products
+
+
+add README.md
+add css/js folder
+fix favicon
+add logo/magedirectory text
+-->
+
+<!-- 
+https://devresourc.es/
+https://saijogeorge.com/best-marketing-tools/
+saijogeorge
+-->
