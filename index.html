@@ -86,13 +86,7 @@
                                     <option value="8" data-path=".Magecomp">Magecomp</option>
                                     <option value="9" data-path=".Webkul">Webkul</option>
                                </select>
-                               <button
-                                    data-jplist-control="reset"
-                                    data-group="group1"
-                                    class="btn btn-outline-secondary"
-                                    data-name="reset"
-                                    type="button">Reset
-                               </button>
+                               <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
                            </div>
                        </div>
                     </div>
@@ -100,7 +94,7 @@
                     <div class="row mb-2">
                         <div class="col-lg-6">
                              <div class="box8">
-                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter" data-clear-btn-id="category-clear-btn">
+                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter">
                                     <option value="0" data-path="default">Filter Categories</option>
 
                                     <optgroup label="Content & Customizations">
@@ -166,14 +160,7 @@
                                         <option value="37" data-path=".loyaltyrewards">Rewards & Loyalty</option>
                                     </optgroup>
                                 </select>
-                                <button
-                                        data-jplist-control="reset"
-                                        data-group="group1"
-                                        class="btn btn-outline-secondary"
-                                        data-name="reset"
-                                        type="button">
-                                    Reset
-                                </button>
+                                <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
                             </div>
                         </div>
 
@@ -639,7 +626,14 @@
                 closeAllLists(e.target);
             });
         }
-        
+        let elements = document.getElementsByClassName("selectreset");
+        for(let i = 0; i < elements.length; i++) {
+            elements[i].onclick = function () {
+                var select = elements[i].previousElementSibling;
+                select.value = 0;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
         var categories = {
                           "translations": "Translations & Localization",
                           "mobile": "Mobile",
@@ -807,29 +801,3 @@
     </script>
     </body>
 </html>
-<!--
-TODO
-scrape all github data
-scrape all marketplace data
-scrape individual vendor data and save in db
-curate/edit data/assign tags+category(ext.php)
-display github link/marketplace link/logo/pwa-ready icon
-https://saijogeorge.com/best-marketing-tools/ show tools for magento developer
-
-#Phase 2
-    display grid view/list view
-    hyva themes compatible filter
-    add similar products
-
-
-add README.md
-add css/js folder
-fix favicon
-add logo/magedirectory text
--->
-
-<!-- 
-https://devresourc.es/
-https://saijogeorge.com/best-marketing-tools/
-saijogeorge
--->
