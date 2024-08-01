@@ -132,32 +132,38 @@
                                         <option value="17" data-path=".checkout">Checkout Enhancements</option>
                                         <option value="18" data-path=".fraud">Fraud Prevention</option>
                                         <option value="19" data-path=".payment">Payment Integration</option>
+                                        <option value="20" data-path=".security">Security</option>
                                     </optgroup>
                                     <optgroup label="Site Optimization">
-                                        <option value="20" data-path=".testing">Testing & Segmentation</option>
-                                        <option value="21" data-path=".hosting">Hosting</option>
-                                        <option value="22" data-path=".sitemonitoring">Site Monitoring</option>
-                                        <option value="23" data-path=".performance">Performance</option>
-                                        <option value="24" data-path=".sitemap">Sitemap</option>
+                                        <option value="21" data-path=".testing">Testing & Segmentation</option>
+                                        <option value="22" data-path=".hosting">Hosting</option>
+                                        <option value="23" data-path=".sitemonitoring">Site Monitoring</option>
+                                        <option value="24" data-path=".performance">Performance</option>
+                                        <option value="25" data-path=".sitemap">Sitemap</option>
                                     </optgroup>
                                     <optgroup label="Administration">
-                                        <option value="25" data-path=".reporting">Reporting & Analytics</option>
-                                        <option value="26" data-path=".admintools">Admin Tools</option>
+                                        <option value="26" data-path=".reporting">Reporting & Analytics</option>
+                                        <option value="27" data-path=".admintools">Admin Tools</option>
                                     </optgroup>
                                     <optgroup label="Marketing">
-                                        <option value="27" data-path=".emailmarketing">Email Marketing</option>
-                                        <option value="28" data-path=".crm">CRM</option>
-                                        <option value="29" data-path=".seo">SEO/SEM</option>
-                                        <option value="30" data-path=".marketingautomation">Marketing Automation</option>
-                                        <option value="31" data-path=".advertising">Advertising</option>
+                                        <option value="28" data-path=".emailmarketing">Email Marketing</option>
+                                        <option value="29" data-path=".crm">CRM</option>
+                                        <option value="30" data-path=".seo">SEO/SEM</option>
+                                        <option value="31" data-path=".marketingautomation">Marketing Automation</option>
+                                        <option value="32" data-path=".advertising">Advertising</option>
                                     </optgroup>
                                     <optgroup label="Sales & Motivation">
-                                        <option value="32" data-path=".comarisonshoppingengines">Comparison Shopping Engines</option>
-                                        <option value="33" data-path=".gifts">Gifts</option>
-                                        <option value="34" data-path=".marketplacefeeds">Marketplace Feeds</option>
-                                        <option value="35" data-path=".pos">Point of Service (POS)</option>
-                                        <option value="36" data-path=".pricingpromotions">Pricing & Promotions</option>
-                                        <option value="37" data-path=".loyaltyrewards">Rewards & Loyalty</option>
+                                        <option value="33" data-path=".comarisonshoppingengines">Comparison Shopping Engines</option>
+                                        <option value="34" data-path=".gifts">Gifts</option>
+                                        <option value="35" data-path=".marketplacefeeds">Marketplace Feeds</option>
+                                        <option value="36" data-path=".pos">Point of Service (POS)</option>
+                                        <option value="37" data-path=".pricingpromotions">Pricing & Promotions</option>
+                                        <option value="38" data-path=".loyaltyrewards">Rewards & Loyalty</option>
+                                    </optgroup>
+                                    <optgroup label="Misc">
+                                        <option value="39" data-path=".developertools">Developer Tools</option>
+                                        <option value="40" data-path=".themes">Themes</option>
+                                        <option value="41" data-path=".resources">Resources</option>
                                     </optgroup>
                                 </select>
                                 <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
@@ -657,6 +663,7 @@
                           "checkout": "Checkout Enhancements",
                           "fraud": "Fraud Prevention",
                           "payment": "Payment Integration",
+                          "security": "Security",
                           "testing": "Testing & Segmentation",
                           "hosting": "Hosting",
                           "sitemonitoring": "Site Monitoring",
@@ -674,7 +681,10 @@
                           "marketplacefeeds": "Marketplace Feeds",
                           "pos": "Point of Service (POS)",
                           "pricingpromotions": "Pricing & Promotions",
-                          "loyaltyrewards": "Rewards & Loyalty"
+                          "loyaltyrewards": "Rewards & Loyalty",
+                          "developertools": "Developer Tools",
+                          "themes": "Themes",
+                          "resources": "Resources",
                         };
 
         var vendorImages = ["Magepow","CEDCommerce","Landofcoder","Mageworx","Amasty","Magecomp","BSSCommerce","Mageplaza","Webkul"];
@@ -696,8 +706,9 @@
         }
         function formatRelativeTime(dateString) {
             const parsedDate = new Date(Date.parse(dateString.replace("GMT+5:30", "+05:30")));
-            if(parsedDate == 'Invalid Date') return "";
-            parsedDate = parsedDate.toISOString();
+            if(parsedDate == 'Invalid Date') 
+                return "";
+            dateString = parsedDate.toISOString();
             const date = new Date(dateString);
             const now = new Date();
             const diffInSeconds = Math.floor((now - date) / 1000);
@@ -782,7 +793,7 @@
                                                 '<span class="description">'+truncate(description,240)+'</span>'+
                                             '</li>'+
                                             '<li class="list-group-item">'+
-                                                '<div class="lastUpdated">'+lastupdated+'</div>'+
+                                                '<div class="lastUpdated">⏱️ '+lastupdated+'</div>'+
                                                 '<div class="companyLogo '+vendor+'">'+vendorimage+
                                                 '</div>'+
                                             '</li>'+
