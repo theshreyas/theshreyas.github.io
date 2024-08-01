@@ -684,8 +684,7 @@
         //     select.options[l] = new Option(categories[index], l);
         //     select.options[l].setAttribute("data-path", "."+index);
         // }
-        // Papa.parse("/ext-fre.csv", {
-        Papa.parse("https://shreyas-dh.github.io/ext_all.csv", {
+        Papa.parse("https://theshreyas.github.io/ext_1253085747.csv", {
             download: true,
             complete: function(results) {
                 loadResults(results);
@@ -695,7 +694,31 @@
         function getCategory(object, value) {//returns key by value
             return Object.keys(object).find(key => object[key] === value);
         }
+        function formatRelativeTime(dateString) {
+            const parsedDate = new Date(Date.parse(dateString.replace("GMT+5:30", "+05:30")));
+            if(parsedDate == 'Invalid Date') return "";
+            parsedDate = parsedDate.toISOString();
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffInSeconds = Math.floor((now - date) / 1000);
+            const intervals = {
+            year: 365 * 24 * 60 * 60,
+            month: 30 * 24 * 60 * 60,
+            week: 7 * 24 * 60 * 60,
+            day: 24 * 60 * 60,
+            hour: 60 * 60,
+            minute: 60,
+            second: 1
+            };
 
+            for (const [interval, seconds] of Object.entries(intervals)) {
+            const count = Math.floor(diffInSeconds / seconds);
+            if (count >= 1) {
+              return `${count} ${interval}${count !== 1 ? 's' : ''} ago`;
+            }
+            }
+            return 'just now';
+        }
         function loadResults(csvData){
 
             jplist.init();
@@ -717,13 +740,13 @@
                     var price = obj[3];
                     var url = obj[4];
                     var reviews = obj[5];
-                    var image = obj[6];
+                    var lastupdated = formatRelativeTime(obj[6]);
                     var vendor = obj[7];
                     var tags = obj[8];
                     var activeCategory = obj[9];
                     var github_url = obj[10];
-                    var Isthirdpary = obj[14];
-                    var pwaready = obj[16];
+                    var isthirdpary = obj[11];
+                    var pwaready = obj[12];
                     const divv = document.createElement('div');
                     divv.setAttribute('class', 'col-md-3 mb-4 divv');
                     divv.setAttribute('data-jplist-item', '');
@@ -741,9 +764,9 @@
                         CategoryKey = activeCategory;
                     }
                     var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
-                    var martkeplaceExt = url.includes('marketplace.magento') ? '<div class="marketplace"></div>' : '';
+                    var martkeplaceExt = url.includes('commercemarketplace.adobe.com') ? '<div class="marketplace"></div>' : '';
                     var isPWAReady = pwaready == 0 ? '<div class="pwaready"></div>' : '';
-                    var thirdpartyExt = Isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
+                    var thirdpartyExt = isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
                     var githubUrl = github_url ==  '' ||  github_url ==  null || github_url ==  'null' ? '' : '<a href="'+github_url+'"><img class="githubavailable" alt="Available on Github" title="Available on Github" src="Gh.png"></a>';
                     // var CategoryKey = getCategory(categories,activeCategory);
                     // console.log(activeCategory+' => '+ CategoryKey);
@@ -759,6 +782,7 @@
                                                 '<span class="description">'+truncate(description,240)+'</span>'+
                                             '</li>'+
                                             '<li class="list-group-item">'+
+                                                '<div class="lastUpdated">'+lastupdated+'</div>'+
                                                 '<div class="companyLogo '+vendor+'">'+vendorimage+
                                                 '</div>'+
                                             '</li>'+
@@ -766,7 +790,7 @@
                                         '<div style="display:none;">'+
                                             '<div class="'+CategoryKey+'">'+activeCategory+'</div>'+
                                             '<div class="vendorname">'+vendor+'</div>'+martkeplaceExt+thirdpartyExt+
-                                            +isPWAReady+
+                                            +isPWAReady+githubUrl+
                                         '</div>'+
                                         '<div class="card-body">'+
                                             tags_html+

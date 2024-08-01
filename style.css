@@ -202,7 +202,6 @@ img.githubavailable {
   color: #ffffff;
 }
 
-
 .box8 select {
   color: black;
   padding: 7px;
@@ -256,4 +255,12 @@ img.githubavailable {
         flex: 0 0 20%;
         max-width: 20%;
     }
+}
+.card-body .badge {
+    font-size: 85%;
+    margin: 1px;
+    padding: 0.35em .4em;
+}
+.lastUpdated {
+    float: left;
 }
