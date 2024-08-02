@@ -46,8 +46,6 @@
             </li>
         </ul>
     </header>
-
-
         <main role="main">
             <div class="py-3 controls-panel control-top-panel">
                 <div class="topfilters">
@@ -292,9 +290,9 @@
                                             class="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
 
-                                        <a class="dropdown-item" href="#" data-value="4">4 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="8">8 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="12">12 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="15">15 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="30">30 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="45">45 per page</a>
                                         <a class="dropdown-item" href="#" data-value="0">View All</a>
 
                                     </div>
@@ -429,7 +427,6 @@
                                 <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
                                     {startItem} - {endItem} of {itemsNumber}
                                 </span>
-
                                 <!-- items per page dropdown -->
                                 <div class="dropdown d-inline-flex ml-3"
                                      data-type="items-per-page-dd"
@@ -445,9 +442,9 @@
                                             class="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
 
-                                        <a class="dropdown-item" href="#" data-value="3">3 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="6">6 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="9">9 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="15">15 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="30">30 per page</a>
+                                        <a class="dropdown-item" href="#" data-value="45">45 per page</a>
                                         <a class="dropdown-item" href="#" data-value="0">View All</a>
 
                                     </div>
@@ -516,8 +513,6 @@
     <script src="papaparse.min.js"></script>
     <script src="lazysizes.min.js"></script>
     <script>
-// https://www.jqueryscript.net/demo/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect/
-// https://www.jqueryscript.net/form/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect.html
         function autocomplete(inp, arr) {
             //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
             var currentFocus;
@@ -713,39 +708,32 @@
             const now = new Date();
             const diffInSeconds = Math.floor((now - date) / 1000);
             const intervals = {
-            year: 365 * 24 * 60 * 60,
-            month: 30 * 24 * 60 * 60,
-            week: 7 * 24 * 60 * 60,
-            day: 24 * 60 * 60,
-            hour: 60 * 60,
-            minute: 60,
-            second: 1
+                year: 365 * 24 * 60 * 60,
+                month: 30 * 24 * 60 * 60,
+                week: 7 * 24 * 60 * 60,
+                day: 24 * 60 * 60,
+                hour: 60 * 60,
+                minute: 60,
+                second: 1
             };
-
             for (const [interval, seconds] of Object.entries(intervals)) {
-            const count = Math.floor(diffInSeconds / seconds);
-            if (count >= 1) {
-              return `${count} ${interval}${count !== 1 ? 's' : ''} ago`;
-            }
+                const count = Math.floor(diffInSeconds / seconds);
+                if (count >= 1) {
+                  return `${count} ${interval}${count !== 1 ? 's' : ''} ago`;
+                }
             }
             return 'just now';
         }
         function loadResults(csvData){
-
             jplist.init();
-
             var parentBox = document.getElementById('parentBox');
-
             var index = 0;
             var CategoryKey = undefined;
-
             var allDivs = [];
             var vendorlist = [];
             var allTags = [];
             csvData.data.forEach((obj)=>{
-
                 if(index != 0 && obj[0] != null && obj[2] != null){
-
                     var name = obj[1];
                     var description = obj[2];
                     var price = obj[3];
@@ -821,15 +809,17 @@
                 });
             });
             var allUniqueTags = [...new Set(allTags)];
-            
-            autocomplete(document.getElementById("tags_filter"), allUniqueTags); 
+            var tagFilter = document.getElementById("tags_filter"); 
+            autocomplete(tagFilter, allUniqueTags); 
             //             console.log(vendorlist.filter(function(value, index, self) {
             //   return self.indexOf(value) === index;
             // }));
             const queryString = window.location.search;
             if (queryString.includes("?tag=")) {
-                const URLTag = queryString.split("?tag=").slice(1);
-                console.log(URLTag);
+                setTimeout(function() {
+                    tagFilter.value = decodeURIComponent(queryString.split("?tag=")[1]);
+                    tagFilter.dispatchEvent(new Event('keyup'));
+                }, 1000);
             }
         }
 
