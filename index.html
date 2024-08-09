@@ -1,828 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            MageDirectory - Magento 2 Extensions Directory
-        </title>
-        <meta name="description" content="MageDirectory is simply Magento 2 Extensions Directory, which you can filter by price, category & tags. As the Magento User Base increases, soon there will be demand for the various extensions. MageDirectory is the one stop solution for these needs." />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165359331-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-165359331-1');
-        </script>
-        <link rel="stylesheet" href="bootstrap.min.css" />
-        <link href="style.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-
-    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row main-navbar" style="min-height: 4rem;background-color: #404040;">
-        <span id="MainLogo" class="navbar-brand mr-0 mr-md-4" style="font-size: 35px;margin-left: 35px;">MageDirectory</span>
-        <div class="navbar-nav-scroll" style="margin: auto;">
-            <h4 style="color:white;margin: auto;">Directory of All Free Magento Extensions</h4>
-        </div>
-
-        <ul class="navbar-nav flex-row d-none d-md-flex">
-
-            <li class="nav-item">
-                <script async defer src="https://buttons.github.io/buttons.js">
-                </script>
-                <a class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" href="https://github.com/theshreyas/theshreyas.github.io" data-icon="octicon-star" data-size="large" aria-label="Star ntkme/github-buttons on GitHub">
-                    Star
-                </a>
-                <a aria-label="Watch theshreyas/theshreyas.github.io on GitHub" class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" href="https://github.com/theshreyas/theshreyas.github.io/subscription">
-                    Watch
-                </a>
-                <a aria-label="Issue theshreyas/theshreyas.github.io on GitHub" class="github-button" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-issue-opened" data-size="large" href="https://github.com/theshreyas/theshreyas.github.io/issues">
-                    Issue
-                </a>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theshreyas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #282c34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #007bff;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            background-color: #20232a;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .tagline {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #ffffff;
+            font-style: italic;
+        }
+        .repo-list {
+            list-style: none;
+            padding: 0;
+            font-size: 20px;
+        }
+        .repo-item {
+            margin: 20px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+        .repo-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .repo-link:hover {
+            color: #21a1f1;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .github-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+        .github-link:hover {
+            color: #005cc5;
+        }
+        .github-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: fill 0.3s;
+        }
+        .github-link:hover .github-icon {
+            fill: #005cc5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">the.shreyas</div>
+        <div class="tagline">Magento Enthusiast</div>
+        <ul class="repo-list">
+            <li class="repo-item">
+                <a href="https://theshreyas.github.io/MageDirectory" class="repo-link" target="_blank">MageDirectory</a>
+            </li>
+            <li class="repo-item">
+                <a href="https://theshreyas.github.io/db-schema-generator" class="repo-link" target="_blank">DB Schema Generator</a>
+            </li>
+            <li class="repo-item">
+                <a href="https://github.com/theshreyas/magento2-quickies" class="repo-link" target="_blank">Magento Quickies</a>
+            </li>
+            <li class="repo-item">
+                <a href="https://theshreyas.github.io/LossPlanner" class="repo-link" target="_blank">Loss Planner</a>
             </li>
         </ul>
-    </header>
-        <main role="main">
-            <div class="py-3 controls-panel control-top-panel">
-                <div class="topfilters">
-
-                    <div class="row mb-2">
-                        <div class="col-lg-6">
-                            <div class="input-group">
-                                <input
-                                        type="text"
-                                        data-jplist-control="textbox-filter"
-                                        data-group="group1"
-                                        data-name="name-filter"
-                                        data-path=".card-title, .description"
-                                        data-clear-btn-id="name-clear-btn"
-                                        class="form-control"
-                                        placeholder="Filter by Name" />
-
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="name-clear-btn">Clear</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="box8">
-                               <select id="vendor_filter" data-jplist-control="select-filter" data-group="group1" data-name="vendor-filter">
-                                    <option value="0" data-path="default">Filter By Vendor</option>
-                                    <option value="1" data-path=".Amasty">Amasty</option>
-                                    <option value="2" data-path=".Mageplaza">Mageplaza</option>
-                                    <option value="3" data-path=".Landofcoder">Landofcoder</option>
-                                    <option value="4" data-path=".Mageworx">Mageworx</option>
-                                    <option value="5" data-path=".Magepow">Magepow</option>
-                                    <option value="6" data-path=".BSSCommerce">BSSCommerce</option>
-                                    <option value="7" data-path=".CEDCommerce">CEDCommerce</option>
-                                    <option value="8" data-path=".Magecomp">Magecomp</option>
-                                    <option value="9" data-path=".Webkul">Webkul</option>
-                               </select>
-                               <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
-                           </div>
-                       </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-lg-6">
-                             <div class="box8">
-                                <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter">
-                                    <option value="0" data-path="default">Filter Categories</option>
-
-                                    <optgroup label="Content & Customizations">
-                                        <option value="1" data-path=".translations">Translations & Localization</option>
-                                        <option value="2" data-path=".mobile">Mobile</option>
-                                        <option value="3" data-path=".personalization">Personalization & Experience Management</option>
-                                        <option value="4" data-path=".productcontent">Product Content</option>
-                                        <option value="5" data-path=".richmedia">Rich Media</option>
-                                        <option value="6" data-path=".sitesearch">Site Search & Navigation</option>
-                                        <option value="39" data-path=".blog">Blog</option>
-                                    </optgroup>
-                                    <optgroup label="Social">
-                                        <option value="40" data-path=".social">Social</option>
-                                    </optgroup>
-                                    <optgroup label="MultiVendor/Marketplace">
-                                        <option value="7" data-path=".marketplaceaddon">Marketplace Add-Ons</option>
-                                        <option value="8" data-path=".marketplacesolutions">Marketplace Solutions</option>
-                                    </optgroup>
-                                    <optgroup label="Shipping & Fulfillment">
-                                        <option value="9" data-path=".addressverification">Address Verification</option>
-                                        <option value="10" data-path=".crossborderfulfil">Cross Border Fulfillment</option>
-                                        <option value="11" data-path=".ordermgmt">Order Management (OMS)</option>
-                                        <option value="12" data-path=".warehousemgmt">Warehouse Management System (WMS)</option>
-                                        <option value="38" data-path=".shippingcustom">Shipping Customizations</option>
-                                    </optgroup>
-                                    <optgroup label="Customer Support">
-                                        <option value="13" data-path=".helpdesk">Helpdesk</option>
-                                        <option value="14" data-path=".livechat">Livechat</option>
-                                    </optgroup>
-                                    <optgroup label="Accounting & Finance">
-                                        <option value="15" data-path=".erp">ERP & Accounting</option>
-                                        <option value="16" data-path=".taxes">Taxes</option>
-                                    </optgroup>
-                                    <optgroup label="Payments & Security">
-                                        <option value="17" data-path=".checkout">Checkout Enhancements</option>
-                                        <option value="18" data-path=".fraud">Fraud Prevention</option>
-                                        <option value="19" data-path=".payment">Payment Integration</option>
-                                        <option value="20" data-path=".security">Security</option>
-                                    </optgroup>
-                                    <optgroup label="Site Optimization">
-                                        <option value="21" data-path=".testing">Testing & Segmentation</option>
-                                        <option value="22" data-path=".hosting">Hosting</option>
-                                        <option value="23" data-path=".sitemonitoring">Site Monitoring</option>
-                                        <option value="24" data-path=".performance">Performance</option>
-                                        <option value="25" data-path=".sitemap">Sitemap</option>
-                                    </optgroup>
-                                    <optgroup label="Administration">
-                                        <option value="26" data-path=".reporting">Reporting & Analytics</option>
-                                        <option value="27" data-path=".admintools">Admin Tools</option>
-                                    </optgroup>
-                                    <optgroup label="Marketing">
-                                        <option value="28" data-path=".emailmarketing">Email Marketing</option>
-                                        <option value="29" data-path=".crm">CRM</option>
-                                        <option value="30" data-path=".seo">SEO/SEM</option>
-                                        <option value="31" data-path=".marketingautomation">Marketing Automation</option>
-                                        <option value="32" data-path=".advertising">Advertising</option>
-                                    </optgroup>
-                                    <optgroup label="Sales & Motivation">
-                                        <option value="33" data-path=".comarisonshoppingengines">Comparison Shopping Engines</option>
-                                        <option value="34" data-path=".gifts">Gifts</option>
-                                        <option value="35" data-path=".marketplacefeeds">Marketplace Feeds</option>
-                                        <option value="36" data-path=".pos">Point of Service (POS)</option>
-                                        <option value="37" data-path=".pricingpromotions">Pricing & Promotions</option>
-                                        <option value="38" data-path=".loyaltyrewards">Rewards & Loyalty</option>
-                                    </optgroup>
-                                    <optgroup label="Misc">
-                                        <option value="39" data-path=".developertools">Developer Tools</option>
-                                        <option value="40" data-path=".themes">Themes</option>
-                                        <option value="41" data-path=".resources">Resources</option>
-                                    </optgroup>
-                                </select>
-                                <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 d-lg-flex align-items-center">
-                            <input
-                                    id="tags_filter"
-                                    data-jplist-control="textbox-filter"
-                                    data-group="group1"
-                                    data-name="tags-filter"
-                                    data-path=".badge"
-                                    type="text"
-                                    value=""
-                                    placeholder="Filter by Tags"
-                                    data-clear-btn-id="tags-clear-btn"
-                                    class="form-control"
-                            />
-
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="tags-clear-btn">Clear</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-                        <div class="col flex flex-wrap align-items-start" style="margin-top:5px;">
-                            <label class="checkbox_label">
-                                <input
-                                        type="checkbox"
-                                        data-jplist-control="checkbox-path-filter"
-                                        data-path=".marketplace"
-                                        data-group="group1"
-                                        data-name="name94">
-                                Marketplace Only
-                                </input>
-                            </label>
-                            <label class="checkbox_label">
-                                <input
-                                        type="checkbox"
-                                        data-jplist-control="checkbox-path-filter"
-                                        data-path=".thirdparty"
-                                        data-group="group1"
-                                        data-name="name95">
-                                Exclude Third-Party Integrators
-                                </input>
-                            </label>
-                            <label class="checkbox_label">
-                                <input
-                                        type="checkbox"
-                                        data-jplist-control="checkbox-path-filter"
-                                        data-path=".githubavailable"
-                                        data-group="group1"
-                                        data-name="name96">
-                                Available on GitHub
-                                </input>
-                            </label>
-                            <label class="checkbox_label">
-                                <input
-                                        type="checkbox"
-                                        data-jplist-control="checkbox-path-filter"
-                                        data-path=".pwaready"
-                                        data-group="group1"
-                                        data-name="name97">
-                                PWA Ready
-                                </input>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col flex flex-wrap align-items-start">
-                            <nav
-                                    data-jplist-control="pagination"
-                                    data-group="group1"
-                                    data-items-per-page="3"
-                                    data-current-page="0"
-                                    data-disabled-class="disabled"
-                                    data-selected-class="active"
-                                    data-jump="top"
-                                    data-name="pagination1"
-                                    class="mb-2 mr-3">
-
-                                <!-- first and previous buttons -->
-                                <ul class="pagination d-inline-flex">
-                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
-                                    <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
-                                </ul>
-
-                                <!-- pages buttons -->
-                                <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
-                                    <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
-                                </ul>
-
-                                <!-- next and last buttons -->
-                                <ul class="pagination d-inline-flex">
-                                    <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
-                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
-                                </ul>
-
-                                <!-- information labels -->
-                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
-                                    Page {pageNumber} of {pagesNumber}
-                                </span>
-
-                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
-                                    {itemsNumber} records
-                                </span>
-
-                                <!-- items per page dropdown -->
-                                <div class="dropdown d-inline-flex ml-lg-3"
-                                     data-type="items-per-page-dd"
-                                     data-opened-class="show">
-
-                                    <button
-                                            data-type="panel"
-                                            class="btn btn-primary dropdown-toggle"
-                                            type="button">
-                                        Dropdown button
-                                    </button>
-
-                                    <div
-                                            data-type="content"
-                                            class="dropdown-menu"
-                                            aria-labelledby="dropdownMenuButton">
-
-                                        <a class="dropdown-item" href="#" data-value="15">15 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="30">30 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="45">45 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="0">View All</a>
-
-                                    </div>
-                                </div>
-
-                            </nav>
-
-                            <!-- dropdown sort control -->
-                            <div class="dropdown mr-3"
-                                 data-jplist-control="dropdown-sort"
-                                 data-opened-class="show"
-                                 data-group="group1"
-                                 data-name="sort1">
-
-                                <button
-                                        data-type="panel"
-                                        class="btn btn-primary dropdown-toggle"
-                                        type="button">
-                                    Sort by
-                                </button>
-
-                                <div
-                                        data-type="content"
-                                        class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton">
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path="default">Sort By</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".card-title"
-                                       data-order="asc"
-                                       data-type="text">Name A-Z</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".card-title"
-                                       data-order="desc"
-                                       data-type="text">Name Z-A</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".vendorname"
-                                       data-order="asc"
-                                       data-type="text">Vendor A-Z</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".vendorname"
-                                       data-order="desc"
-                                       data-type="text">Vendor Z-A</a>
-
-                                    <!-- <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".price .val"
-                                       data-order="asc"
-                                       data-type="text">Price low to high</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".price .val"
-                                       data-order="desc"
-                                       data-type="text">Price high to low</a> -->
-                                </div>
-                            </div>
-
-                            <!-- reset control -->
-                            <button
-                                    data-jplist-control="reset"
-                                    data-group="group1"
-                                    data-name="reset"
-                                    class="btn btn-secondary"
-                                    type="button">
-                                Reset All
-                            </button>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="py-5 bg-light">
-                <div class="container">
-
-                    <div class="row" data-jplist-group="group1" id="parentBox">
-                        <!-- no results control -->
-                        <div class="col text-center" data-jplist-control="no-results" data-group="group1" data-name="no-results">No Results Found</div>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="py-3 py-lg-5 controls-panel control-bottom-panel">
-                <div class="topfilters">
-
-                    <div class="row">
-                        <div class="col flex">
-                            <!-- pagination control -->
-                            <nav
-                                    data-jplist-control="pagination"
-                                    data-group="group1"
-                                    data-items-per-page="15"
-                                    data-current-page="0"
-                                    data-disabled-class="disabled"
-                                    data-selected-class="active"
-                                    data-jump="top"
-                                    data-name="pagination1"
-                                    class="mb-2 mb-lg-0">
-
-                                <!-- first and previous buttons -->
-                                <ul class="pagination d-inline-flex">
-                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
-                                    <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
-                                </ul>
-
-                                <!-- pages buttons -->
-                                <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
-                                    <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
-                                </ul>
-
-                                <!-- next and last buttons -->
-                                <ul class="pagination d-inline-flex">
-                                    <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
-                                    <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
-                                </ul>
-
-                                <!-- information labels -->
-                                <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
-                                    {startItem} - {endItem} of {itemsNumber}
-                                </span>
-                                <!-- items per page dropdown -->
-                                <div class="dropdown d-inline-flex ml-3"
-                                     data-type="items-per-page-dd"
-                                     data-opened-class="show">
-
-                                    <button
-                                            data-type="panel"
-                                            class="btn btn-primary dropdown-toggle"
-                                            type="button">Items per page</button>
-
-                                    <div
-                                            data-type="content"
-                                            class="dropdown-menu"
-                                            aria-labelledby="dropdownMenuButton">
-
-                                        <a class="dropdown-item" href="#" data-value="15">15 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="30">30 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="45">45 per page</a>
-                                        <a class="dropdown-item" href="#" data-value="0">View All</a>
-
-                                    </div>
-                                </div>
-
-                            </nav>
-
-                            <!-- dropdown sort control -->
-                            <div class="dropdown ml-3"
-                                 data-jplist-control="dropdown-sort"
-                                 data-opened-class="show"
-                                 data-group="group1"
-                                 data-name="sort1">
-
-                                <button
-                                        data-type="panel"
-                                        class="btn btn-primary dropdown-toggle"
-                                        type="button">
-                                    Sort by
-                                </button>
-
-                                <div
-                                        data-type="content"
-                                        class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton">
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path="default">Sort By</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".card-title"
-                                       data-order="asc"
-                                       data-type="text">Title A-Z</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".card-title"
-                                       data-order="desc"
-                                       data-type="text">Title Z-A</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".description"
-                                       data-order="asc"
-                                       data-type="text">Description A-Z</a>
-
-                                    <a class="dropdown-item"
-                                       href="#"
-                                       data-path=".description"
-                                       data-order="desc"
-                                       data-type="text">Description Z-A</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </main>
-    <!-- IE / Edge babel polyfill -->
-    <script src="polyfill.min.js"></script>
-    <script src="jplist.min.js"></script>
-    <script src="papaparse.min.js"></script>
-    <script src="lazysizes.min.js"></script>
-    <script>
-        function autocomplete(inp, arr) {
-            //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
-            var currentFocus;
-            inp.addEventListener("focus", function(e) {
-                var a,val = this.value.trim();
-                if(val == ""){
-                    a = document.querySelector("#"+this.id + "autocomplete-list");
-                    if(!a){
-                        a = document.createElement("DIV");
-                        a.setAttribute("id", this.id + "autocomplete-list");
-                        a.setAttribute("class", "autocomplete-items");
-                        this.parentNode.appendChild(a);
-                    }
-                    for (i = 0; i < arr.length; i++) {
-                        if (arr[i].toUpperCase().includes(val.toUpperCase())) {
-
-                          b = document.createElement("DIV");
-                          c = arr[i].toUpperCase().indexOf(val.toUpperCase());
-
-                          substring = arr[i].substr(c, val.length);
-                          replaced = arr[i].replace(substring, '<b>' + substring + '</b>');
-
-                          b.innerHTML = replaced;
-                          b.innerHTML += "<input type='hidden' value='" + arr[i].trim() + "'>";
-                          b.addEventListener("click", function(e) {
-                            inp.value = this.getElementsByTagName("input")[0].value.trim();
-                            window.history.replaceState(null, null, "?tag="+inp.value);
-                            inp.dispatchEvent(new Event('keyup'));
-                            // document.getElementById('tags_filter').dispatchEvent(new Event('change'));
-                            // inp.click();
-                            // b.click();
-                            // inp.dispatchEvent(new Event('change'));
-                            closeAllLists();
-                          });
-                          a.appendChild(b);
-                        }
-                    }
-
-                }
-            });
-            inp.addEventListener("input", function(e) {
-                var a, b, c, i, val = this.value;
-                var substring,replaced;
-                closeAllLists();
-                if (!val) { return false;}
-                currentFocus = -1;
-                a = document.createElement("DIV");
-                a.setAttribute("id", this.id + "autocomplete-list");
-                a.setAttribute("class", "autocomplete-items");
-                this.parentNode.appendChild(a);
-                for (i = 0; i < arr.length; i++) {
-                    if (arr[i].toUpperCase().includes(val.toUpperCase())) {
-
-                      b = document.createElement("DIV");
-                      c      = arr[i].toUpperCase().indexOf(val.toUpperCase());
-
-                      substring = arr[i].substr(c, val.length);
-                      replaced = arr[i].replace(substring, '<b>' + substring + '</b>');
-
-                      b.innerHTML = replaced;
-                      b.innerHTML += "<input type='hidden' value='" + arr[i].trim() + "'>";
-                      b.addEventListener("click", function(e) {
-                        inp.value = this.getElementsByTagName("input")[0].value.trim();
-                        window.history.replaceState(null, null, "?tag="+inp.value);
-                        inp.dispatchEvent(new Event('keyup'));
-                        closeAllLists();
-                      });
-                      a.appendChild(b);
-                    }
-                }
-            });
-            inp.addEventListener("keydown", function(e) {
-              var x = document.getElementById(this.id + "autocomplete-list");
-              if (x) x = x.getElementsByTagName("div");
-              if (e.keyCode == 40) {
-                currentFocus++;
-                addActive(x);
-              } else if (e.keyCode == 38) { //up
-                currentFocus--;
-                addActive(x);
-              } else if (e.keyCode == 13) {
-                e.preventDefault();
-                if (currentFocus > -1) {
-                  if (x) x[currentFocus].click();
-                }
-              }
-            });
-            
-            function addActive(x) {
-                if (!x) return false;
-                removeActive(x);
-                if(!currentFocus) currentFocus = 0;
-                if (currentFocus >= x.length) currentFocus = 0;
-                if (currentFocus < 0) currentFocus = (x.length - 1);
-                x[currentFocus].classList.add("autocomplete-active");
-            }
-
-            function removeActive(x) {
-                for (var i = 0; i < x.length; i++) {
-                    x[i].classList.remove("autocomplete-active");
-                }
-            }
-            function closeAllLists(elmnt) {
-                var x = document.getElementsByClassName("autocomplete-items");
-                for (var i = 0; i < x.length; i++) {
-                    if (elmnt != x[i] && elmnt != inp) {
-                        x[i].parentNode.removeChild(x[i]);
-                    }
-                }
-            }
-            document.addEventListener("click", function (e) {
-                closeAllLists(e.target);
-            });
-        }
-        let elements = document.getElementsByClassName("selectreset");
-        for(let i = 0; i < elements.length; i++) {
-            elements[i].onclick = function () {
-                var select = elements[i].previousElementSibling;
-                select.value = 0;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-        var categories = {
-                          "translations": "Translations & Localization",
-                          "mobile": "Mobile",
-                          "personalization": "Personalization & Experience Management",
-                          "productcontent": "Product Content",
-                          "richmedia": "Rich Media",
-                          "sitesearch": "Site Search & Navigation",
-                          "blog": "Blog",
-                          "social": "Social",
-                          "marketplaceaddon": "Marketplace Add-Ons",
-                          "marketplacesolutions": "Marketplace Solutions",
-                          "addressverification": "Address Verification",
-                          "crossborderfulfil": "Cross Border Fulfillment",
-                          "ordermgmt": "Order Management (OMS)",
-                          "warehousemgmt": "Warehouse Management System (WMS)",
-                          "shippingcustom": "Shipping Customizations",
-                          "helpdesk": "Helpdesk",
-                          "livechat": "Livechat",
-                          "erp": "ERP & Accounting",
-                          "taxes": "Taxes",
-                          "checkout": "Checkout Enhancements",
-                          "fraud": "Fraud Prevention",
-                          "payment": "Payment Integration",
-                          "security": "Security",
-                          "testing": "Testing & Segmentation",
-                          "hosting": "Hosting",
-                          "sitemonitoring": "Site Monitoring",
-                          "performance": "Performance",
-                          "sitemap": "Sitemap",
-                          "reporting": "Reporting & Analytics",
-                          "admintools": "Admin Tools",
-                          "emailmarketing": "Email Marketing",
-                          "crm": "CRM",
-                          "seo": "SEO/SEM",
-                          "marketingautomation": "Marketing Automation",
-                          "advertising": "Advertising",
-                          "comarisonshoppingengines": "Comparison Shopping Engines",
-                          "gifts": "Gifts",
-                          "marketplacefeeds": "Marketplace Feeds",
-                          "pos": "Point of Service (POS)",
-                          "pricingpromotions": "Pricing & Promotions",
-                          "loyaltyrewards": "Rewards & Loyalty",
-                          "developertools": "Developer Tools",
-                          "themes": "Themes",
-                          "resources": "Resources",
-                        };
-
-        var vendorImages = ["Magepow","CEDCommerce","Landofcoder","Mageworx","Amasty","Magecomp","BSSCommerce","Mageplaza","Webkul"];
-        // var select = document.getElementById("category_filter");",        var l=0;
-        // for(index in categories) {
-        //     l = select.options.length;
-        //     select.options[l] = new Option(categories[index], l);
-        //     select.options[l].setAttribute("data-path", "."+index);
-        // }
-        Papa.parse("https://theshreyas.github.io/ext_1253085747.csv", {
-            download: true,
-            complete: function(results) {
-                loadResults(results);
-            }
-        });
-
-        function getCategory(object, value) {//returns key by value
-            return Object.keys(object).find(key => object[key] === value);
-        }
-        function formatRelativeTime(dateString) {
-            const parsedDate = new Date(Date.parse(dateString.replace("GMT+5:30", "+05:30")));
-            if(parsedDate == 'Invalid Date') 
-                return "";
-            dateString = parsedDate.toISOString();
-            const date = new Date(dateString);
-            const now = new Date();
-            const diffInSeconds = Math.floor((now - date) / 1000);
-            const intervals = {
-                year: 365 * 24 * 60 * 60,
-                month: 30 * 24 * 60 * 60,
-                week: 7 * 24 * 60 * 60,
-                day: 24 * 60 * 60,
-                hour: 60 * 60,
-                minute: 60,
-                second: 1
-            };
-            for (const [interval, seconds] of Object.entries(intervals)) {
-                const count = Math.floor(diffInSeconds / seconds);
-                if (count >= 1) {
-                  return `${count} ${interval}${count !== 1 ? 's' : ''} ago`;
-                }
-            }
-            return 'just now';
-        }
-        function loadResults(csvData){
-            jplist.init();
-            var parentBox = document.getElementById('parentBox');
-            var index = 0;
-            var CategoryKey = undefined;
-            var allDivs = [];
-            var vendorlist = [];
-            var allTags = [];
-            csvData.data.forEach((obj)=>{
-                if(index != 0 && obj[0] != null && obj[2] != null){
-                    var name = obj[1];
-                    var description = obj[2];
-                    var price = obj[3];
-                    var url = obj[4];
-                    var reviews = obj[5];
-                    var lastupdated = formatRelativeTime(obj[6]);
-                    var vendor = obj[7];
-                    var tags = obj[8];
-                    var activeCategory = obj[9];
-                    var github_url = obj[10];
-                    var isthirdpary = obj[11];
-                    var pwaready = obj[12];
-                    const divv = document.createElement('div');
-                    divv.setAttribute('class', 'col-md-3 mb-4 divv');
-                    divv.setAttribute('data-jplist-item', '');
-                    var tags_html = '';
-                    var tags_array = tags.split(',');
-                    for(var i = 0; i < tags_array.length; i++) 
-                    {
-                        if(tags_array[i] != ""){
-                            tags_html += '<span class="badge '+(i%2 === 0 ? 'badge-info' : 'badge-secondary')+'">'+tags_array[i]+'</span>';
-                            allTags.push(tags_array[i]);
-                        }
-                    }
-
-                    if(activeCategory in categories){
-                        CategoryKey = activeCategory;
-                    }
-                    var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
-                    var martkeplaceExt = url.includes('commercemarketplace.adobe.com') ? '<div class="marketplace"></div>' : '';
-                    var isPWAReady = pwaready == 0 ? '<div class="pwaready"></div>' : '';
-                    var thirdpartyExt = isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
-                    var githubUrl = github_url ==  '' ||  github_url ==  null || github_url ==  'null' ? '' : '<a href="'+github_url+'"><img class="githubavailable" alt="Available on Github" title="Available on Github" src="Gh.png"></a>';
-                    // var CategoryKey = getCategory(categories,activeCategory);
-                    // console.log(activeCategory+' => '+ CategoryKey);
-
-                    divv.innerHTML = '<div class="card box-shadow">'+
-                                        '<div class="card-header">'+
-                                            '<h5 class="card-title mb-0">'+
-                                                '<a target="_blank" href="'+url+'" title="'+name+'">'+name+'</a>'+
-                                            '</h5>'+
-                                        '</div>'+
-                                        '<ul class="list-group list-group-flush">'+
-                                            '<li class="list-group-item">'+
-                                                '<span class="description">'+truncate(description,240)+'</span>'+
-                                            '</li>'+
-                                            '<li class="list-group-item">'+
-                                                '<div class="lastUpdated">⏱️ '+lastupdated+'</div>'+
-                                                '<div class="companyLogo '+vendor+'">'+vendorimage+
-                                                '</div>'+
-                                            '</li>'+
-                                        '</ul>'+
-                                        '<div style="display:none;">'+
-                                            '<div class="'+CategoryKey+'">'+activeCategory+'</div>'+
-                                            '<div class="vendorname">'+vendor+'</div>'+martkeplaceExt+thirdpartyExt+
-                                            +isPWAReady+githubUrl+
-                                        '</div>'+
-                                        '<div class="card-body">'+
-                                            tags_html+
-                                    '</div>';
-                    allDivs.push(divv);
-                    vendorlist.push(vendor);
-                }
-                index++;
-            });
-            
-            function truncate(str, n){
-              return (str.length > n) ? str.slice(0, n-1) + '&hellip;' : str;
-            };
-            jplist.resetContent(function(){
-                allDivs.forEach((div)=>{
-                    parentBox.appendChild(div);
-                });
-            });
-            var allUniqueTags = [...new Set(allTags)];
-            var tagFilter = document.getElementById("tags_filter"); 
-            autocomplete(tagFilter, allUniqueTags); 
-            //             console.log(vendorlist.filter(function(value, index, self) {
-            //   return self.indexOf(value) === index;
-            // }));
-            const queryString = window.location.search;
-            if (queryString.includes("?tag=")) {
-                setTimeout(function() {
-                    tagFilter.value = decodeURIComponent(queryString.split("?tag=")[1]);
-                    tagFilter.dispatchEvent(new Event('keyup'));
-                }, 1000);
-            }
-        }
-
-    </script>
-    </body>
+        <div class="footer">
+            <a href="https://github.com/theshreyas" target="_blank" class="github-link">
+                GitHub
+                <svg class="github-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</body>
 </html>
