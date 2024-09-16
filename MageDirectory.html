@@ -22,8 +22,8 @@
     </head>
     <body>
 
-    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row main-navbar" style="min-height: 4rem;background-color: #404040;">
-        <span id="MainLogo" class="navbar-brand mr-0 mr-md-4" style="font-size: 35px;margin-left: 35px;">MageDirectory</span>
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row main-navbar">
+        <span class="navbar-brand mr-0 mr-md-4">MageDirectory</span>
         <div class="navbar-nav-scroll" style="margin: auto;">
             <h4 style="color:white;margin: auto;">Directory of All Free Magento Extensions</h4>
         </div>
@@ -94,69 +94,6 @@
                          <div class="box8">
                             <select id="category_filter" data-jplist-control="select-filter" data-group="group1" data-name="category-filter">
                                 <option value="0" data-path="default">Filter Categories</option>
-
-                                <optgroup label="Content & Customizations">
-                                    <option value="1" data-path=".translations">Translations & Localization</option>
-                                    <option value="2" data-path=".mobile">Mobile</option>
-                                    <option value="3" data-path=".personalization">Personalization & Experience Management</option>
-                                    <option value="4" data-path=".productcontent">Product Content</option>
-                                    <option value="5" data-path=".richmedia">Rich Media</option>
-                                    <option value="6" data-path=".sitesearch">Site Search & Navigation</option>
-                                    <option value="39" data-path=".blog">Blog</option>
-                                </optgroup>
-                                <optgroup label="Shipping & Fulfillment">
-                                    <option value="9" data-path=".addressverification">Address Verification</option>
-                                    <option value="10" data-path=".crossborderfulfil">Cross Border Fulfillment</option>
-                                    <option value="11" data-path=".ordermgmt">Order Management (OMS)</option>
-                                    <option value="12" data-path=".warehousemgmt">Warehouse Management System (WMS)</option>
-                                    <option value="38" data-path=".shippingcustom">Shipping Customizations</option>
-                                </optgroup>
-                                <optgroup label="Customer Support">
-                                    <option value="13" data-path=".helpdesk">Helpdesk</option>
-                                    <option value="14" data-path=".livechat">Livechat</option>
-                                </optgroup>
-                                <optgroup label="Accounting & Finance">
-                                    <option value="15" data-path=".erp">ERP & Accounting</option>
-                                    <option value="16" data-path=".taxes">Taxes</option>
-                                </optgroup>
-                                <optgroup label="Payments & Security">
-                                    <option value="17" data-path=".checkout">Checkout Enhancements</option>
-                                    <option value="18" data-path=".fraud">Fraud Prevention</option>
-                                    <option value="19" data-path=".payment">Payment Integration</option>
-                                    <option value="20" data-path=".security">Security</option>
-                                </optgroup>
-                                <optgroup label="Site Optimization">
-                                    <option value="21" data-path=".testing">Testing & Segmentation</option>
-                                    <option value="22" data-path=".hosting">Hosting</option>
-                                    <option value="23" data-path=".sitemonitoring">Site Monitoring</option>
-                                    <option value="24" data-path=".performance">Performance</option>
-                                    <option value="25" data-path=".sitemap">Sitemap</option>
-                                </optgroup>
-                                <optgroup label="Administration">
-                                    <option value="26" data-path=".reporting">Reporting & Analytics</option>
-                                    <option value="27" data-path=".admintools">Admin Tools</option>
-                                </optgroup>
-                                <optgroup label="Marketing">
-                                    <option value="28" data-path=".emailmarketing">Email Marketing</option>
-                                    <option value="29" data-path=".crm">CRM</option>
-                                    <option value="30" data-path=".seo">SEO/SEM</option>
-                                    <option value="31" data-path=".marketingautomation">Marketing Automation</option>
-                                    <option value="32" data-path=".advertising">Advertising</option>
-                                </optgroup>
-                                <optgroup label="Sales & Motivation">
-                                    <option value="33" data-path=".comarisonshoppingengines">Comparison Shopping Engines</option>
-                                    <option value="34" data-path=".gifts">Gifts</option>
-                                    <option value="35" data-path=".marketplacefeeds">Marketplace Feeds</option>
-                                    <option value="36" data-path=".pos">Point of Service (POS)</option>
-                                    <option value="37" data-path=".pricingpromotions">Pricing & Promotions</option>
-                                    <option value="38" data-path=".loyaltyrewards">Rewards & Loyalty</option>
-                                </optgroup>
-                                <optgroup label="Misc">
-                                    <option value="39" data-path=".developertools">Developer Tools</option>
-                                    <option value="40" data-path=".themes">Themes</option>
-                                    <option value="41" data-path=".resources">Resources</option>
-                                    <option value="42" data-path=".social">Social Connect</option>
-                                </optgroup>
                             </select>
                             <button class="btn btn-outline-secondary selectreset" type="button">Reset</button>
                         </div>
@@ -215,7 +152,7 @@
                             Available on GitHub
                             </input>
                         </label>
-                        <label class="checkbox_label">
+                        <!-- <label class="checkbox_label">
                             <input
                                     type="checkbox"
                                     data-jplist-control="checkbox-path-filter"
@@ -225,6 +162,16 @@
                             PWA Ready
                             </input>
                         </label>
+                        <label class="checkbox_label">
+                            <input
+                                    type="checkbox"
+                                    data-jplist-control="checkbox-path-filter"
+                                    data-path=".hyva"
+                                    data-group="group1"
+                                    data-name="name98">
+                            Hyva Compatible
+                            </input>
+                        </label> -->
                     </div>
                 </div>
 
@@ -384,8 +331,11 @@
         </div>
 
         <div class="py-5 bg-light">
+            <div id="loading-container">
+                <div id="loading">
+                </div>
+            </div>
             <div class="container">
-
                 <div class="row" data-jplist-group="group1" id="parentBox">
                     <!-- no results control -->
                     <div class="col text-center" data-jplist-control="no-results" data-group="group1" data-name="no-results">No Results Found</div>
@@ -511,9 +461,7 @@
 
             </div>
         </div>
-    <div id="loading" class="loading">
-        Loading&#8230;
-    </div>
+
     </main>
     <!-- IE / Edge babel polyfill -->
     <script src="polyfill.min.js"></script>
@@ -521,6 +469,11 @@
     <script src="papaparse.min.js"></script>
     <script src="lazysizes.min.js"></script>
     <script>
+        const Id = document.getElementById.bind(document);
+        let loadingDiv = Id('loading');
+        let parentBox = Id('parentBox');
+        loadingDiv.style.display = 'block';
+        parentBox.style.opacity = '30%';
         function autocomplete(inp, arr) {
             //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
             var currentFocus;
@@ -549,7 +502,7 @@
                             inp.value = this.getElementsByTagName("input")[0].value.trim();
                             window.history.replaceState(null, null, "?tag="+inp.value);
                             inp.dispatchEvent(new Event('keyup'));
-                            // document.getElementById('tags_filter').dispatchEvent(new Event('change'));
+                            // Id('tags_filter').dispatchEvent(new Event('change'));
                             // inp.click();
                             // b.click();
                             // inp.dispatchEvent(new Event('change'));
@@ -593,7 +546,7 @@
                 }
             });
             inp.addEventListener("keydown", function(e) {
-              var x = document.getElementById(this.id + "autocomplete-list");
+              var x = Id(this.id + "autocomplete-list");
               if (x) x = x.getElementsByTagName("div");
               if (e.keyCode == 40) {
                 currentFocus++;
@@ -651,75 +604,126 @@
                 select.dispatchEvent(new Event('change'));
             }
         }
-        var categories = {
-                          "translations": "Translations & Localization",
-                          "mobile": "Mobile",
-                          "personalization": "Personalization & Experience Management",
-                          "productcontent": "Product Content",
-                          "richmedia": "Rich Media",
-                          "sitesearch": "Site Search & Navigation",
-                          "blog": "Blog",
-                          "social": "Social Connect",
-                          "addressverification": "Address Verification",
-                          "crossborderfulfil": "Cross Border Fulfillment",
-                          "ordermgmt": "Order Management (OMS)",
-                          "warehousemgmt": "Warehouse Management System (WMS)",
-                          "shippingcustom": "Shipping Customizations",
-                          "helpdesk": "Helpdesk",
-                          "livechat": "Livechat",
-                          "erp": "ERP & Accounting",
-                          "taxes": "Taxes",
-                          "checkout": "Checkout Enhancements",
-                          "fraud": "Fraud Prevention",
-                          "payment": "Payment Integration",
-                          "security": "Security",
-                          "testing": "Testing & Segmentation",
-                          "hosting": "Hosting",
-                          "sitemonitoring": "Site Monitoring",
-                          "performance": "Performance",
-                          "sitemap": "Sitemap",
-                          "reporting": "Reporting & Analytics",
-                          "admintools": "Admin Tools",
-                          "emailmarketing": "Email Marketing",
-                          "crm": "CRM",
-                          "seo": "SEO/SEM",
-                          "marketingautomation": "Marketing Automation",
-                          "advertising": "Advertising",
-                          "comarisonshoppingengines": "Comparison Shopping Engines",
-                          "gifts": "Gifts",
-                          "marketplacefeeds": "Marketplace Feeds",
-                          "pos": "Point of Service (POS)",
-                          "pricingpromotions": "Pricing & Promotions",
-                          "loyaltyrewards": "Rewards & Loyalty",
-                          "developertools": "Developer Tools",
-                          "themes": "Themes",
-                          "resources": "Resources",
-                        };
-
+        var categories = [
+          {
+            group: "Content & Customizations",
+            options: [
+              { key: "translations", label: "Translations & Localization" },
+              { key: "mobile", label: "Mobile" },
+              { key: "personalization", label: "Personalization & Experience Management" },
+              { key: "productcontent", label: "Product Content" },
+              { key: "richmedia", label: "Rich Media" },
+              { key: "sitesearch", label: "Site Search & Navigation" },
+              { key: "blog", label: "Blog" }
+            ]
+          },
+          {
+            group: "Shipping & Fulfillment",
+            options: [
+              { key: "addressverification", label: "Address Verification" },
+              { key: "crossborderfulfil", label: "Cross Border Fulfillment" },
+              { key: "ordermgmt", label: "Order Management (OMS)" },
+              { key: "warehousemgmt", label: "Warehouse Management System (WMS)" },
+              { key: "shippingcustom", label: "Shipping Customizations" }
+            ]
+          },
+          {
+            group: "Customer Support",
+            options: [
+              { key: "helpdesk", label: "Helpdesk" },
+              { key: "livechat", label: "Livechat" }
+            ]
+          },
+          {
+            group: "Accounting & Finance",
+            options: [
+              { key: "erp", label: "ERP & Accounting" },
+              { key: "taxes", label: "Taxes" }
+            ]
+          },
+          {
+            group: "Payments & Security",
+            options: [
+              { key: "checkout", label: "Checkout Enhancements" },
+              { key: "fraud", label: "Fraud Prevention" },
+              { key: "payment", label: "Payment Integration" },
+              { key: "security", label: "Security" }
+            ]
+          },
+          {
+            group: "Site Optimization",
+            options: [
+              { key: "testing", label: "Testing & Segmentation" },
+              { key: "hosting", label: "Hosting" },
+              { key: "sitemonitoring", label: "Site Monitoring" },
+              { key: "performance", label: "Performance" },
+              { key: "sitemap", label: "Sitemap" }
+            ]
+          },
+          {
+            group: "Administration",
+            options: [
+              { key: "reporting", label: "Reporting & Analytics" },
+              { key: "admintools", label: "Admin Tools" }
+            ]
+          },
+          {
+            group: "Marketing",
+            options: [
+              { key: "emailmarketing", label: "Email Marketing" },
+              { key: "crm", label: "CRM" },
+              { key: "seo", label: "SEO/SEM" },
+              { key: "marketingautomation", label: "Marketing Automation" },
+              { key: "advertising", label: "Advertising" }
+            ]
+          },
+          {
+            group: "Sales & Motivation",
+            options: [
+              { key: "comarisonshoppingengines", label: "Comparison Shopping Engines" },
+              { key: "gifts", label: "Gifts" },
+              { key: "marketplacefeeds", label: "Marketplace Feeds" },
+              { key: "pos", label: "Point of Service (POS)" },
+              { key: "pricingpromotions", label: "Pricing & Promotions" },
+              { key: "loyaltyrewards", label: "Rewards & Loyalty" }
+            ]
+          },
+          {
+            group: "Misc",
+            options: [
+              { key: "developertools", label: "Developer Tools" },
+              { key: "themes", label: "Themes" },
+              { key: "resources", label: "Resources" },
+              { key: "social", label: "Social Connect" },
+              { key: "migration", label: "Data Migration/Import" }
+            ]
+          }
+        ];
+        const categoryCount = {};
+        categories.forEach(category => {
+            category.options.forEach(option => {
+              categoryCount[option.key] = 0; 
+            });
+        });
         var vendorImages = ["Magepow","CEDCommerce","Landofcoder","Mageworx","Amasty","Magecomp","BSSCommerce","Mageplaza","Webkul"];
-        // var select = document.getElementById("category_filter");",        var l=0;
-        // for(index in categories) {
-        //     l = select.options.length;
-        //     select.options[l] = new Option(categories[index], l);
-        //     select.options[l].setAttribute("data-path", "."+index);
-        // }
-        var loadingDiv = document.getElementById('loading');
-        loadingDiv.style.visibility = 'visible';
+        var select = Id("category_filter");
         Papa.parse("https://theshreyas.github.io/ext.csv", {
             download: true,
             complete: function(results) {
                 loadResults(results);
-                var tagFilter = document.getElementById("tags_filter"); 
+                var tagFilter = Id("tags_filter"); 
                 const queryString = window.location.search;
                 if (queryString.includes("?tag=")) {
                     setTimeout(function() {
                         tagFilter.value = decodeURIComponent(queryString.split("?tag=")[1]);
                         tagFilter.dispatchEvent(new Event('keyup'));
-                        loadingDiv.style.visibility = 'hidden';
+                        loadingDiv.style.display = 'none';
+                        parentBox.style.opacity = '1';
                     }, 900);
                 }
                 else {
-                    loadingDiv.style.visibility = 'hidden';
+                    loadingDiv.style.display = 'none';
+                    parentBox.style.opacity = '1';
                 }
             }
         });
@@ -753,8 +757,7 @@
             return 'just now';
         }
         function loadResults(csvData){
-            jplist.init();
-            var parentBox = document.getElementById('parentBox');
+            var parentBox = Id('parentBox');
             var index = 0;
             var CategoryKey = undefined;
             var allDivs = [];
@@ -787,8 +790,9 @@
                         }
                     }
 
-                    if(activeCategory in categories){
+                    if(activeCategory in categoryCount){
                         CategoryKey = activeCategory;
+                        categoryCount[activeCategory]++;
                     }
                     var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
                     var martkeplaceExt = url.includes('commercemarketplace.adobe.com') ? '<div class="marketplace"></div>' : '';
@@ -827,7 +831,19 @@
                 }
                 index++;
             });
-            
+            let ct = 1;
+            categories.forEach(category => {
+                var optGroup = document.createElement("optgroup");
+                optGroup.label = category.group;
+                category.options.forEach(option => {
+                    let key = option.key;
+                    let opt = new Option(option.label+'  ('+categoryCount[key]+')',ct++);
+                    opt.setAttribute("data-path", "." +key);
+                    optGroup.appendChild(opt);
+                });
+                select.appendChild(optGroup);
+            });
+            jplist.init();
             function truncate(str, n){
               return (str.length > n) ? str.slice(0, n-1) + '&hellip;' : str;
             };
@@ -837,12 +853,12 @@
                 });
             });
             var allUniqueTags = [...new Set(allTags)];
-            var tagFilter = document.getElementById("tags_filter"); 
+            var tagFilter = Id("tags_filter"); 
             autocomplete(tagFilter, allUniqueTags); 
             //             console.log(vendorlist.filter(function(value, index, self) {
             //   return self.indexOf(value) === index;
             // }));
-            
+           console.log(categoryCount);
         }
 
     </script>
